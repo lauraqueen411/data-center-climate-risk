@@ -7,8 +7,12 @@ calculations are always performed in an equal-area projected CRS
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import geopandas as gpd
+import numpy as np
 import pandas as pd
+import rasterio
 
 from .config import CRS_EQUAL_AREA, CRS_GEOGRAPHIC
 
@@ -39,6 +43,74 @@ def points_from_lonlat(
     valid = df.dropna(subset=[lon_col, lat_col]).copy()
     geometry = gpd.points_from_xy(valid[lon_col], valid[lat_col])
     return gpd.GeoDataFrame(valid, geometry=geometry, crs=crs)
+
+
+def load_oregon_data_centers(csv_path: Path) -> gpd.GeoDataFrame:
+    """Load the IM3/PNNL data-center atlas CSV, filtered to Oregon facilities.
+
+    Parameters
+    ----------
+    csv_path:
+        Path to the IM3/PNNL open-source data-center atlas CSV.
+
+    Returns
+    -------
+    geopandas.GeoDataFrame
+        Oregon rows (``state_abb == "OR"``) with a point ``geometry`` column
+        built from ``lon``/``lat``, in :data:`CRS_GEOGRAPHIC`.
+    """
+    df = pd.read_csv(csv_path)
+    df = df[df["state_abb"] == "OR"].copy()
+    return points_from_lonlat(df)
+
+
+def sample_raster_at_points(raster_path: Path, lon: np.ndarray, lat: np.ndarray) -> np.ndarray:
+    """Sample a single-band raster's values at a set of lon/lat points.
+
+    Parameters
+    ----------
+    raster_path:
+        Path to a single-band raster readable by ``rasterio``.
+    lon, lat:
+        Point coordinates (decimal degrees) in the raster's CRS.
+
+    Returns
+    -------
+    numpy.ndarray
+        Sampled band-1 values, one per input point. Points that fall outside
+        the raster extent, or land on a nodata cell, are returned as ``NaN``
+        rather than the raw nodata sentinel.
+    """
+    with rasterio.open(raster_path) as src:
+        points = list(zip(lon, lat, strict=False))
+        values = np.array([v[0] for v in src.sample(points)], dtype=float)
+        if src.nodata is not None:
+            values = np.where(np.isclose(values, src.nodata), np.nan, values)
+    return values
+
+
+def get_facility_elevation_m(lon: np.ndarray, lat: np.ndarray, dem_path: Path) -> np.ndarray:
+    """Sample ground elevation (metres) at facility coordinates from a DEM.
+
+    Thin wrapper around :func:`sample_raster_at_points` so callers don't need
+    to know it's raster sampling under the hood. Kept generic (not heat-index
+    specific) so Phase 2.2's flood-elevation work can reuse it against the
+    same or a different DEM instead of duplicating a sampler.
+
+    Parameters
+    ----------
+    lon, lat:
+        Facility coordinates (decimal degrees), matching the DEM's CRS.
+    dem_path:
+        Path to a single-band elevation raster (e.g. USGS 3DEP).
+
+    Returns
+    -------
+    numpy.ndarray
+        Elevation in metres per point; ``NaN`` where a point falls outside
+        the DEM extent or on a nodata cell.
+    """
+    return sample_raster_at_points(dem_path, lon, lat)
 
 
 def to_equal_area(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:

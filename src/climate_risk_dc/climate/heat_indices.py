@@ -26,6 +26,7 @@ class HeatIndexConfig:
     cdd_base_c: float = 18.3
     threshold_c: float = 35.0
     min_duration_days: int = 3
+    lapse_rate_c_per_1000m: float = 6.5
 
 
 def _open_temperature_dataarray(path: Path | str, expected_var: str) -> xr.DataArray:
@@ -205,6 +206,42 @@ def compute_period_heat_indices(
         "tmax_c": tasmax_c,
         "tasmin_c": tasmin_c,
     }
+
+
+def elevation_adjusted_threshold(
+    base_threshold_c: float,
+    elevation_m: float,
+    config: HeatIndexConfig,
+) -> float:
+    """Lower an absolute Tmax threshold for a facility's elevation.
+
+    **Placeholder rate — not yet confirmed against ASHRAE guidance.** The
+    methods doc calls for adjusting the exceedance threshold downward at
+    high-elevation sites ("cooling performance drops") but does not specify
+    an exact formula or rate. This implementation stands in with the
+    standard-atmosphere (ISA) environmental lapse rate,
+    ``config.lapse_rate_c_per_1000m`` (default 6.5 degC/km) — a generic
+    free-air temperature-vs-altitude relationship, not a validated
+    psychrometric or cooling-equipment derating curve. Treat the output as
+    illustrative until a real ASHRAE-referenced rate (or facility-specific
+    cooling-performance curve) replaces this default.
+
+    Parameters
+    ----------
+    base_threshold_c:
+        Flat (sea-level) exceedance threshold in Celsius.
+    elevation_m:
+        Facility elevation in metres above sea level.
+    config:
+        :class:`HeatIndexConfig`; only ``lapse_rate_c_per_1000m`` is used.
+
+    Returns
+    -------
+    float
+        ``base_threshold_c`` reduced by the lapse rate applied over
+        ``elevation_m``.
+    """
+    return base_threshold_c - (config.lapse_rate_c_per_1000m / 1000.0) * elevation_m
 
 
 def threshold_frequency_summary(

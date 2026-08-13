@@ -24,6 +24,8 @@ import numpy as np
 import pandas as pd
 import rasterio
 
+from climate_risk_dc.geo import load_oregon_data_centers
+
 
 @dataclass(frozen=True)
 class TableConfig:
@@ -50,12 +52,6 @@ def _col_pick(df: pd.DataFrame, candidates: list[str]) -> str | None:
         if cand.lower() in cols_lower:
             return cols_lower[cand.lower()]
     return None
-
-
-def _load_data_centers(path: Path) -> gpd.GeoDataFrame:
-    df = pd.read_csv(path)
-    df = df[df["state_abb"] == "OR"].copy()
-    return gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df["lon"], df["lat"]), crs="EPSG:4326")
 
 
 def _load_generators(path: Path) -> gpd.GeoDataFrame:
@@ -216,7 +212,7 @@ def run(args: argparse.Namespace) -> None:
         "heatwave_fut": out_dir / "rasters" / "heatwave_events_ssp585_2070_2099.tif",
     }
 
-    dc = _load_data_centers(dc_path)
+    dc = load_oregon_data_centers(dc_path)
     subst, lines = _load_power_layers(sub_path, line_path, cfg.transmission_min_kv)
     gens = _load_generators(gen_path)
 

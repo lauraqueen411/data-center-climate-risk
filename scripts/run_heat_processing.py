@@ -8,6 +8,14 @@ Assumptions log
 - Outputs are period-mean annual indices for two windows:
   historical (1950-1979) and SSP585 future (2070-2099).
 - Common CRS for this phase is EPSG:4326.
+- This pipeline is locked to a single GCM/member (``RunConfig.model`` =
+  "ACCESS-CM2", ``RunConfig.member`` = "r1i1p1f1") rather than a multi-model
+  LOCA2 ensemble. A single-model run does not capture inter-model spread, so
+  every index here represents one plausible trajectory under SSP585, not a
+  probabilistic range across GCMs. This is a known limitation, not an
+  oversight; extending to a small multi-model ensemble is a scope/cost
+  decision to be made explicitly later, not something this pipeline decides
+  on its own.
 """
 
 from __future__ import annotations
@@ -34,6 +42,7 @@ from climate_risk_dc.climate.heat_indices import (
     mask_to_polygon,
     threshold_frequency_summary,
 )
+from climate_risk_dc.geo import load_oregon_data_centers
 
 
 @dataclass(frozen=True)
@@ -176,13 +185,6 @@ def _plot_quicklook(index_da, boundary_gdf, dc_gdf, title: str, out_path: Path) 
     plt.close(fig)
 
 
-def _load_oregon_data_centers(csv_path: Path) -> gpd.GeoDataFrame:
-    df = pd.read_csv(csv_path)
-    df = df[df["state_abb"] == "OR"].copy()
-    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df["lon"], df["lat"]), crs="EPSG:4326")
-    return gdf
-
-
 def _select_temp_var(ds, base_name: str):
     if base_name in ds.data_vars:
         return ds[base_name]
@@ -243,7 +245,7 @@ def run(args: argparse.Namespace) -> None:
 
     boundary = _oregon_boundary(watershed_gdb)
     boundary_poly = boundary.geometry.iloc[0]
-    dc_gdf = _load_oregon_data_centers(dc_csv)
+    dc_gdf = load_oregon_data_centers(dc_csv)
 
     periods = [
         ("historical_1950_1979", cfg.scenario_hist, cfg.hist_start, cfg.hist_end),
