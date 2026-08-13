@@ -1,0 +1,5 @@
+{
+    "python.defaultInterpreterPath": "/home/server/pi/homes/queenl/.conda/envs/climate-risk/bin/python",
+    "python.jupyterPath": "/home/server/pi/homes/queenl/.conda/envs/climate-risk/bin/jupyter",
+    "python.terminal.activateEnvironment": true
+}

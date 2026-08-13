@@ -1,0 +1,19 @@
+# data
+data/
+*.nc
+*.tif
+*.tiff
+*.grib
+*.hdf5
+*.zip
+
+# env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+
+# outputs
+outputs/
+*.log
