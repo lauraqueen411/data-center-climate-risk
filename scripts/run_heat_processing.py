@@ -5,8 +5,20 @@ Assumptions log
 - Heat-only scope for this run; flood and wildfire are deferred.
 - LOCA2 tasmin/tasmax are loaded from NetCDF and converted explicitly from
   Kelvin to Celsius before any index calculations.
-- Outputs are period-mean annual indices for two windows:
-  historical (1950-1979) and SSP585 future (2070-2099).
+- Outputs are period-mean annual indices for three windows: historical
+  (1985-2014, the most recent 30-year window in LOCA2's historical record),
+  mid-century (2045-2074, the primary future period -- see methods doc's
+  "Time Horizons" section), and end-of-century (2075-2100, a conservative
+  secondary period). The two future windows are unequal length (30 vs. 26
+  years) because both are snapped to LOCA2's native ssp585 file windows
+  rather than round decades, to avoid needing cross-file concatenation --
+  a stated simplification, not a mismatch. See
+  ``docs/tasks/0.2-fix-loca2-window-resolver-and-time-horizons.md``.
+- LOCA2 file resolution (``climate_risk_dc.climate.loca2_io``) requires an
+  exact single native-window file per period and raises rather than
+  silently falling back to the "closest" file -- this replaces a prior
+  bug where an ``end >= 2099`` heuristic silently selected only the
+  2075-2100 file for a requested 2070-2099 period, dropping 2070-2074.
 - Common CRS for this phase is EPSG:4326.
 - This pipeline is locked to a single GCM/member (``RunConfig.model`` =
   "ACCESS-CM2", ``RunConfig.member`` = "r1i1p1f1") rather than a multi-model
@@ -23,7 +35,6 @@ from __future__ import annotations
 import argparse
 from dataclasses import dataclass
 from pathlib import Path
-import re
 
 import geopandas as gpd
 import matplotlib
@@ -42,6 +53,7 @@ from climate_risk_dc.climate.heat_indices import (
     mask_to_polygon,
     threshold_frequency_summary,
 )
+from climate_risk_dc.climate.loca2_io import resolve_loca2_file, temperature_path_config
 from climate_risk_dc.geo import load_oregon_data_centers
 
 
@@ -53,10 +65,12 @@ class RunConfig:
     member: str = "r1i1p1f1"
     scenario_hist: str = "historical"
     scenario_fut: str = "ssp585"
-    hist_start: int = 1950
-    hist_end: int = 1979
-    fut_start: int = 2070
-    fut_end: int = 2099
+    hist_start: int = 1985
+    hist_end: int = 2014
+    mid_start: int = 2045
+    mid_end: int = 2074
+    eoc_start: int = 2075
+    eoc_end: int = 2100
     threshold_c: float = 35.0
     cdd_base_c: float = 18.3
     min_duration_days: int = 3
@@ -64,61 +78,6 @@ class RunConfig:
     lon_max: float = -116.0
     lat_min: float = 42.0
     lat_max: float = 46.5
-
-
-def _loca2_file(
-    loca2_root: Path,
-    model: str,
-    member: str,
-    scenario: str,
-    variable: str,
-) -> Path:
-    """Resolve the expected LOCA2 NetCDF path for the n_west regional split."""
-    year_part = "1950-2014" if scenario == "historical" else "2015-2100"
-    # Some future files are split by shorter windows; we first try canonical full file.
-    candidate = (
-        loca2_root
-        / model
-        / "n_west"
-        / "0p0625deg"
-        / member
-        / scenario
-        / variable
-        / f"{variable}.{model}.{scenario}.{member}.{year_part}.LOCA_16thdeg_v20220413.n_west.nc"
-    )
-    if candidate.exists():
-        return candidate
-
-    # Fallback: select a daily file in the variable directory.
-    var_dir = loca2_root / model / "n_west" / "0p0625deg" / member / scenario / variable
-    all_matches = sorted(var_dir.glob(f"{variable}.{model}.{scenario}.{member}*.n_west.nc"))
-    daily_matches = [
-        p for p in all_matches if ".monthly." not in p.name and ".yearly." not in p.name
-    ]
-    if not daily_matches:
-        raise FileNotFoundError(f"No LOCA2 file found in {var_dir}")
-
-    def _year_span(path: Path) -> tuple[int, int] | None:
-        m = re.search(r"\.(\d{4})-(\d{4})\.LOCA", path.name)
-        if not m:
-            return None
-        return int(m.group(1)), int(m.group(2))
-
-    # Prefer files that contain the later years we need for SSP585 and full span for historical.
-    if scenario != "historical":
-        candidates = []
-        for p in daily_matches:
-            span = _year_span(p)
-            if span is None:
-                continue
-            start, end = span
-            if end >= 2099:
-                candidates.append((start, end, p))
-        if candidates:
-            candidates.sort(key=lambda x: (x[0], x[1]))
-            return candidates[-1][2]
-
-    return daily_matches[0]
 
 
 def _oregon_boundary(watershed_gdb: Path, layer: str = "WBDHU8") -> gpd.GeoDataFrame:
@@ -241,20 +200,21 @@ def run(args: argparse.Namespace) -> None:
 
     watershed_gdb = root / "data" / "watershed_boundaries" / "WBD_National_GDB.gdb"
     dc_csv = root / "data" / "data_centers_im3_pnnl" / "im3_open_source_data_center_atlas_v2026.02.09.csv"
-    loca2_root = Path(args.loca2_root)
+    path_cfg = temperature_path_config(Path(args.loca2_root), model=cfg.model, member=cfg.member)
 
     boundary = _oregon_boundary(watershed_gdb)
     boundary_poly = boundary.geometry.iloc[0]
     dc_gdf = load_oregon_data_centers(dc_csv)
 
     periods = [
-        ("historical_1950_1979", cfg.scenario_hist, cfg.hist_start, cfg.hist_end),
-        ("ssp585_2070_2099", cfg.scenario_fut, cfg.fut_start, cfg.fut_end),
+        ("historical_1985_2014", cfg.scenario_hist, cfg.hist_start, cfg.hist_end),
+        ("ssp585_2045_2074", cfg.scenario_fut, cfg.mid_start, cfg.mid_end),
+        ("ssp585_2075_2100", cfg.scenario_fut, cfg.eoc_start, cfg.eoc_end),
     ]
 
     for label, scenario, start_year, end_year in periods:
-        tasmax_file = _loca2_file(loca2_root, cfg.model, cfg.member, scenario, "tasmax")
-        tasmin_file = _loca2_file(loca2_root, cfg.model, cfg.member, scenario, "tasmin")
+        tasmax_file = resolve_loca2_file(path_cfg, scenario, "tasmax", start_year, end_year)
+        tasmin_file = resolve_loca2_file(path_cfg, scenario, "tasmin", start_year, end_year)
         print(f"Using {label}:\n  tasmax={tasmax_file}\n  tasmin={tasmin_file}")
         _log_unit_sanity(tasmax_file, tasmin_file)
 
@@ -298,7 +258,8 @@ def run(args: argparse.Namespace) -> None:
                 "model": cfg.model,
                 "member": cfg.member,
                 "historical_window": f"{cfg.hist_start}-{cfg.hist_end}",
-                "future_window": f"{cfg.fut_start}-{cfg.fut_end}",
+                "mid_century_window": f"{cfg.mid_start}-{cfg.mid_end}",
+                "end_of_century_window": f"{cfg.eoc_start}-{cfg.eoc_end}",
                 "threshold_c": cfg.threshold_c,
                 "cdd_base_c": cfg.cdd_base_c,
                 "min_duration_days": cfg.min_duration_days,
