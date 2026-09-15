@@ -113,6 +113,66 @@ def get_facility_elevation_m(lon: np.ndarray, lat: np.ndarray, dem_path: Path) -
     return sample_raster_at_points(dem_path, lon, lat)
 
 
+# Approximate bounding boxes for informal Oregon sub-regions, used only for
+# exploratory grouping in notebooks -- not authoritative geographic or
+# administrative boundaries (no county/region shapefile exists in this repo).
+# Derived by inspecting the actual facility_lon/facility_lat clusters in
+# outputs/month2_heat/facility_heat_indices.csv (109 Oregon data centers).
+# Checked in order; first match wins. "Columbia Gorge" and "Columbia Basin /
+# Umatilla" are kept separate even though both sit along the Columbia River
+# corridor -- the Gorge box covers the river canyon proper (Troutdale-to-
+# Dalles), while Columbia Basin covers the geographically distinct
+# Boardman/Umatilla high-desert cluster ~100mi further east (the bulk of the
+# AWS us-west-2 footprint, ~59 of 109 facilities). Verified zero-unclassified,
+# zero-ambiguous against all 109 facilities as of 2026-08-24.
+OREGON_REGION_BOXES: list[tuple[str, float, float, float, float]] = [
+    # (region, lon_min, lon_max, lat_min, lat_max)
+    ("Portland area", -123.1, -122.55, 45.4, 45.65),
+    ("Willamette Valley / Southwest", -123.5, -122.3, 42.0, 45.4),
+    ("Columbia Gorge", -121.5, -120.9, 45.5, 45.75),
+    ("Central Oregon", -121.5, -120.3, 43.8, 44.6),
+    ("Columbia Basin / Umatilla", -119.8, -119.0, 45.75, 46.0),
+]
+
+OREGON_REGION_ORDER: list[str] = [region for region, *_ in OREGON_REGION_BOXES]
+
+
+def assign_oregon_region(lon: np.ndarray, lat: np.ndarray) -> np.ndarray:
+    """Label each point with an approximate Oregon sub-region.
+
+    Coarse lon/lat bounding-box classification against
+    :data:`OREGON_REGION_BOXES` -- an informal grouping for exploratory
+    plots, not a spatial join against real administrative or physiographic
+    boundaries. A point outside all five boxes is labelled
+    ``"Unclassified"`` rather than silently dropped or mis-assigned into the
+    nearest box.
+
+    Parameters
+    ----------
+    lon, lat:
+        Point coordinates (decimal degrees).
+
+    Returns
+    -------
+    numpy.ndarray
+        Region label per point (dtype object), one of
+        :data:`OREGON_REGION_ORDER` or ``"Unclassified"``.
+    """
+    lon = np.asarray(lon, dtype=float)
+    lat = np.asarray(lat, dtype=float)
+    labels = np.full(lon.shape, "Unclassified", dtype=object)
+    for region, lon_min, lon_max, lat_min, lat_max in OREGON_REGION_BOXES:
+        in_box = (
+            (labels == "Unclassified")
+            & (lon >= lon_min)
+            & (lon <= lon_max)
+            & (lat >= lat_min)
+            & (lat <= lat_max)
+        )
+        labels[in_box] = region
+    return labels
+
+
 def to_equal_area(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     """Reproject to the project equal-area CRS for metric computations."""
     return gdf.to_crs(CRS_EQUAL_AREA)
