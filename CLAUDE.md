@@ -28,7 +28,7 @@ Oregon data-center physical climate risk analysis (heat + flood). `docs/methods-
 ## Data source notes
 
 - **JRC flood hazard data** = JRC Global River Flood Hazard Maps v2.1 (Baugh et al. 2024), distributed as `CEMS-GLOFAS` — this is why files are named `glofas_rp*.tif`, not a different/wrong dataset. 90m resolution, return periods RP10/20/50/75/100/200/500. Only RP100 has been pulled for Oregon so far; the other six are still needed.
-- LOCA2 heat pipeline is currently locked to a single GCM/member (ACCESS-CM2, r1i1p1f1) — a documented limitation, not an oversight. Don't silently switch to or add an ensemble without flagging it.
+- The LOCA2 heat and PUE/WUE pipelines use a 20-GCM SSP3-7.0 ensemble, one member per model, listed in `outputs/ensemble_pue_wue/gcm_manifest.csv`. The original single-GCM runs in `outputs/month2_heat/` and `outputs/month2_pue/` are superseded. Don't silently add, drop, or swap models in the ensemble without flagging it.
 
 ## Workflow
 
