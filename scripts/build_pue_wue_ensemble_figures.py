@@ -2,32 +2,47 @@
 
 Reads the summary tables ``scripts/build_pue_wue_ensemble_summary.py`` wrote
 under ``outputs/ensemble_pue_wue_facilities/analysis/`` and produces
-Figures 1-6 and 8 (Figure 7 needs the heat-index ensemble, built separately
-by ``scripts/aggregate_heat_ensemble.py``, and paired in a follow-up step;
-Figure 9 is contingent on a sub-region decision not yet made, per the task
-doc -- not built speculatively) plus Tables 1-4, per
+Figures 1-6, 8, and 9 (Figure 7 needs the heat-index ensemble, built
+separately by ``scripts/aggregate_heat_ensemble.py``, and paired in a
+follow-up step) plus Tables 1-5, per
 ``docs/data-center-chapter-outline.md``'s candidate figure/table list.
 
 Archetype labels use the corrected Case numbers (Phase 0 found "Case 3" in
 the task doc and outline was a typo for Case 2 -- confirmed with the user):
 Case 1 (``ae-chiller``), Case 2 (``we-chiller``), Case 5 (``chiller-only``).
 
+Figure 9 / Table 5 (sub-region breakdown): the sub-region decision the task
+doc flagged as unresolved is now resolved -- one representative facility per
+EPA Level III ecoregion (Omernik 1987), chosen by
+``scripts/build_pue_wue_ensemble_summary.py`` and read here from its
+``ecoregion_representative_facilities.csv`` output. No new aggregation
+happens in this module for Figure 9/Table 5: it's a ``facility_id`` filter
+against the already-loaded ``by_site``/``delta`` tables, showing that one
+site's own ensemble mean / 5th-95th percentile spread per ecoregion (see
+that script's Assumptions log for why an average-of-many-sites approach was
+rejected in favor of a single representative site).
+
 Outputs under ``outputs/ensemble_pue_wue_facilities/``:
-- ``figures/figure{1..6,8}_*.png``
-- ``tables/table{1..4}_*.csv``
+- ``figures/figure{1..6,8,9}_*.png``
+- ``tables/table{1..5}_*.csv``
 """
 
 from __future__ import annotations
 
 import argparse
+import textwrap
 from pathlib import Path
 
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
+import geopandas as gpd
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.colors import LinearSegmentedColormap
+
+from climate_risk_dc.config import load_dataset_paths
+from climate_risk_dc.geo import to_equal_area, to_geographic
 
 # --------------------------------------------------------------------------
 # Palette (see facility_PUE_explore.ipynb / dataviz skill references/palette.md)
@@ -61,6 +76,23 @@ SEQUENTIAL_BLUE_CMAP = LinearSegmentedColormap.from_list("sequential_blue", SEQU
 
 SPOTCHECK_IDS = {19988712: "Meta Prineville", 231769626: "Google The Dalles"}
 
+# Fills for the EPA Level III ecoregion underlay in the study-area map
+# (figure1_site_map) -- keyed by name rather than row order so each of the
+# five facility-bearing ecoregions gets a deliberately chosen, distinguishable
+# color; the four ecoregions with no data centers fall back to
+# ECOREGION_FILL_NODATA (grey) so the map reads at a glance as "colored =
+# relevant to this study." Eastern Cascades Slopes and Foothills is a thin
+# north-south sliver, so it gets a slightly punchier color than the others to
+# stay visible at that width, while still matching their pastel lightness.
+ECOREGION_FILL_COLORS = {
+    "Columbia Plateau": "#cfe8cf",
+    "Willamette Valley": "#f2d0de",
+    "Blue Mountains": "#cdd6f2",
+    "Eastern Cascades Slopes and Foothills": "#f6cd94",
+    "Klamath Mountains/California High North Coast Range": "#a3d9d3",
+}
+ECOREGION_FILL_NODATA = "#dcdcdc"
+
 
 def _apply_style() -> None:
     plt.rcParams.update({
@@ -80,8 +112,20 @@ def _apply_style() -> None:
     })
 
 
+# Oregon Albers Equal Area (matches OSGeo's "NAD83 / Oregon GIC Lambert" study
+# extent, but Albers to stay consistent with this project's own equal-area
+# convention, CRS_EQUAL_AREA/EPSG:5070, elsewhere in geo.py). Plain
+# PlateCarree plots degrees of longitude and latitude at the same visual
+# scale; at Oregon's latitude a degree of longitude is only ~80% the ground
+# distance of a degree of latitude, so PlateCarree renders the state ~2:1
+# wide:tall when its true shape is closer to 1.4:1. OCA7's own regional map
+# (papers/OCA7_full.pdf, Figure 1, p.56) doesn't use a named projection
+# either -- plain lon/lat axes -- so there's no OCA7 convention to match here.
+OREGON_ALBERS = ccrs.AlbersEqualArea(central_longitude=-120.5, central_latitude=43.0, standard_parallels=(43.0, 45.5))
+
+
 def _oregon_axes(fig, pos=111):
-    ax = fig.add_subplot(pos, projection=ccrs.PlateCarree())
+    ax = fig.add_subplot(pos, projection=OREGON_ALBERS)
     ax.set_extent([-125, -116, 42, 46.5], crs=ccrs.PlateCarree())
     ax.add_feature(cfeature.STATES.with_scale("50m"), edgecolor=AXIS_LINE, linewidth=0.7, zorder=1)
     ax.add_feature(cfeature.BORDERS.with_scale("50m"), edgecolor=INK_SECONDARY, linewidth=0.8, zorder=1)
@@ -90,38 +134,120 @@ def _oregon_axes(fig, pos=111):
     return ax
 
 
+def _add_ecoregion_underlay(ax) -> None:
+    """Draw EPA Level III ecoregion polygons (Omernik 1987) beneath the facility markers.
+
+    Muted fills, drawn at zorder=0 so they read as spatial context for the
+    facility markers rather than competing with them -- see
+    ``ECOREGION_FILL_COLORS``'s comment.
+    """
+    ecoregions = gpd.read_file(load_dataset_paths().ecoregion_l3_shp).to_crs("EPSG:4326")
+    for row in ecoregions.itertuples():
+        ax.add_geometries(
+            [row.geometry], crs=ccrs.PlateCarree(),
+            facecolor=ECOREGION_FILL_COLORS.get(row.US_L3NAME, ECOREGION_FILL_NODATA),
+            edgecolor=AXIS_LINE, linewidth=0.7, zorder=0,
+        )
+
+
 def figure1_site_map(by_site: pd.DataFrame, fig_dir: Path) -> None:
-    sub = by_site[(by_site["archetype"] == "ae-chiller") & (by_site["period"] == "historical") & (by_site["metric"] == "pue_mean")]
+    """Study-area orientation map: facility locations only, no data encoding.
+
+    Erica Fleishman review (heat-method-results-draft_EF.docx): this map
+    originally colored each facility dot by historical PUE, which needed its
+    own explanation and a hard-to-read light end of the palette. Plain black
+    dots plus ecoregion-name labels make the map legible as pure orientation
+    context; PUE itself is introduced later, where it's actually discussed.
+    No in-figure title either -- the manuscript caption already carries it.
+    """
+    sites = by_site[["facility_id", "lon", "lat", "US_L3NAME"]].drop_duplicates("facility_id")
     fig = plt.figure(figsize=(8, 4.8))
     ax = _oregon_axes(fig)
-    sc = ax.scatter(sub["lon"], sub["lat"], c=sub["mean"], cmap=SEQUENTIAL_BLUE_CMAP, s=45, edgecolor="white", linewidth=0.4, zorder=2, transform=ccrs.PlateCarree())
-    cbar = fig.colorbar(sc, ax=ax, shrink=0.7, pad=0.02)
-    cbar.set_label("Historical baseline PUE (Case 1, ensemble mean)", color=INK_SECONDARY)
-    cbar.ax.tick_params(color=INK_MUTED, labelcolor=INK_MUTED)
-    ax.set_title("Figure 1. Oregon data center locations, historical baseline PUE", color=INK_PRIMARY, fontsize=11)
+    _add_ecoregion_underlay(ax)
+    # Smaller markers than the original (s=45 -> s=18) and a thinner edge so
+    # individual facilities stay distinguishable in the dense Columbia
+    # Plateau / Willamette Valley clusters, rather than merging into a single
+    # blob against the ecoregion underlay.
+    ax.scatter(sites["lon"], sites["lat"], color=INK_PRIMARY, s=18, edgecolor="white", linewidth=0.3, zorder=2, transform=ccrs.PlateCarree())
+
+    # Label only the ecoregions that actually contain a facility -- the
+    # underlay draws all nine EPA Level III ecoregions in Oregon, but four
+    # of them have none (see methods-document.md 2.3 / Table 1). Labels sit
+    # at each polygon's own area centroid (computed in the equal-area CRS,
+    # not the facility cluster's mean position), so they read as "this is
+    # the region" rather than crowding around wherever facilities happen to
+    # sit -- e.g. Blue Mountains' 13 facilities are a single tight cluster
+    # near Prineville, in the region's western edge, not its middle.
+    n_by_eco = sites.groupby("US_L3NAME")["facility_id"].count()
+    label_overrides = {
+        "Eastern Cascades Slopes and Foothills": "Eastern Cascades\nSlopes and Foothills",
+        "Klamath Mountains/California High North Coast Range": "Klamath Mountains",
+    }
+    # Nudge labels (degrees latitude) from their raw polygon centroid where
+    # the default position crowds a facility cluster or the region's own
+    # shape: Willamette Valley's centroid sits close to its dense northern
+    # facility cluster; Eastern Cascades' is a thin sliver where the
+    # two-line label needs more room below the Columbia Plateau/Blue
+    # Mountains boundary; Klamath Mountains' centroid sits low enough to
+    # crowd the state's southern border.
+    label_y_offsets = {
+        "Willamette Valley": -0.35,
+        "Eastern Cascades Slopes and Foothills": -0.6,
+        "Klamath Mountains/California High North Coast Range": 0.15,
+    }
+    ecoregions = gpd.read_file(load_dataset_paths().ecoregion_l3_shp)
+    centroids = to_geographic(to_equal_area(ecoregions).assign(geometry=lambda g: g.centroid))
+    for eco_row in centroids.itertuples():
+        eco_name = eco_row.US_L3NAME
+        if eco_name not in n_by_eco.index:
+            continue
+        label = label_overrides.get(eco_name, eco_name)
+        y = eco_row.geometry.y + label_y_offsets.get(eco_name, 0)
+        ax.annotate(
+            f"{label}\n(n={n_by_eco[eco_name]})",
+            xy=(eco_row.geometry.x, y), transform=ccrs.PlateCarree(),
+            fontsize=12, color=INK_SECONDARY, ha="center", va="center", zorder=3,
+        )
+
     fig.tight_layout()
     fig.savefig(fig_dir / "figure1_site_map.png", bbox_inches="tight")
     plt.close(fig)
 
 
-def _grouped_bar(ax, statewide: pd.DataFrame, metric: str, ylabel: str) -> None:
+def _grouped_dot_whisker(ax, statewide: pd.DataFrame, metric: str, ylabel: str) -> None:
+    """Mean + 5th-95th pct. whiskers, offset by period within each archetype.
+
+    Dots-with-whiskers rather than bars-from-zero: several of these
+    period-to-period differences are small relative to the metric's own
+    scale (e.g. PUE moves by a few hundredths across 21st-century warming),
+    so a bar chart anchored at zero makes every bar look nearly identical --
+    the y-axis can't zoom into the range that actually varies. A point-range
+    plot has no zero-baseline requirement, so the axis limits can track the
+    data's own range and the real separation between periods stays visible.
+    """
     sub = statewide[statewide["metric"] == metric]
     x = np.arange(len(ARCHETYPE_ORDER))
-    width = 0.25
+    offset = 0.12
     for i, period in enumerate(PERIOD_ORDER):
         vals = sub[sub["period"] == period].set_index("archetype").reindex(ARCHETYPE_ORDER)
         lo = vals["mean"] - vals["p05"]
         hi = vals["p95"] - vals["mean"]
-        ax.bar(x + (i - 1) * width, vals["mean"], width=width, color=PERIOD_COLORS[period], label=PERIOD_LABELS[period].split("\n")[0], edgecolor=AXIS_LINE, linewidth=0.6)
-        ax.errorbar(x + (i - 1) * width, vals["mean"], yerr=[lo, hi], fmt="none", ecolor=INK_PRIMARY, elinewidth=1.1, capsize=3)
+        xi = x + (i - 1) * offset
+        ax.errorbar(
+            xi, vals["mean"], yerr=[lo, hi], fmt="o", markersize=6,
+            color=PERIOD_COLORS[period], ecolor=PERIOD_COLORS[period],
+            elinewidth=1.3, capsize=4, markeredgecolor=INK_PRIMARY, markeredgewidth=0.6,
+            label=PERIOD_LABELS[period].split("\n")[0],
+        )
     ax.set_xticks(x)
     ax.set_xticklabels([ARCHETYPE_LABELS[a] for a in ARCHETYPE_ORDER], fontsize=8.5)
+    ax.set_xlim(x[0] - 0.4, x[-1] + 0.4)
     ax.set_ylabel(ylabel)
 
 
 def figure2_pue_by_period_archetype(statewide: pd.DataFrame, fig_dir: Path) -> None:
     fig, ax = plt.subplots(figsize=(8, 5.5))
-    _grouped_bar(ax, statewide, "pue_mean", "Fleet-mean PUE")
+    _grouped_dot_whisker(ax, statewide, "pue_mean", "Fleet-mean PUE")
     ax.legend(frameon=False, fontsize=8.5)
     ax.set_title("Figure 2. Fleet-mean PUE by period and archetype\n(ensemble mean, 5th-95th pct. whiskers, n=20 GCMs)", fontsize=10.5)
     fig.tight_layout()
@@ -131,7 +257,7 @@ def figure2_pue_by_period_archetype(statewide: pd.DataFrame, fig_dir: Path) -> N
 
 def figure3_wue_by_period_archetype(statewide: pd.DataFrame, fig_dir: Path) -> None:
     fig, ax = plt.subplots(figsize=(8, 5.5))
-    _grouped_bar(ax, statewide, "wue_mean", "Fleet-mean WUE (L/kWh)")
+    _grouped_dot_whisker(ax, statewide, "wue_mean", "Fleet-mean WUE (L/kWh)")
     ax.legend(frameon=False, fontsize=8.5)
     hist = statewide[(statewide["metric"] == "wue_mean") & (statewide["period"] == "historical")].set_index("archetype")
     holds = hist.loc["ae-chiller", "mean"] < hist.loc["we-chiller", "mean"]
@@ -232,10 +358,14 @@ def figure7_heat_pue_trend(statewide: pd.DataFrame, heat_summary_path: Path, fig
     axes[0].set_ylabel("Fleet-mean threshold-exceedance days/yr")
     axes[0].set_title("Extreme heat (ASHRAE A2 threshold)", fontsize=10)
 
+    # Dot + whisker, not a bar: the historical->end-of-century PUE change is
+    # small relative to PUE's own scale, so a zero-anchored bar would make
+    # all three periods look nearly identical -- a point-range plot lets the
+    # axis zoom into the range that actually moves.
     lo = pue["mean"] - pue["p05"]
     hi = pue["p95"] - pue["mean"]
-    axes[1].bar(x, pue["mean"], color=SERIES_BLUE, edgecolor=AXIS_LINE, linewidth=0.6)
-    axes[1].errorbar(x, pue["mean"], yerr=[lo, hi], fmt="none", ecolor=INK_PRIMARY, elinewidth=1.1, capsize=3)
+    axes[1].plot(x, pue["mean"], color=SERIES_BLUE, linewidth=1.3, linestyle="--", zorder=1)
+    axes[1].errorbar(x, pue["mean"], yerr=[lo, hi], fmt="o", markersize=7, color=SERIES_BLUE, ecolor=SERIES_BLUE, elinewidth=1.3, capsize=4, markeredgecolor=INK_PRIMARY, markeredgewidth=0.6, zorder=2)
     axes[1].set_xticks(x)
     axes[1].set_xticklabels([PERIOD_LABELS[p].split("\n")[0] for p in PERIOD_ORDER], fontsize=8.5)
     axes[1].set_ylabel("Fleet-mean PUE (Case 1)")
@@ -272,6 +402,47 @@ def figure8_ensemble_spread(period_summary: pd.DataFrame, fig_dir: Path) -> None
     plt.close(fig)
 
 
+def figure9_ecoregion_representative_sites(by_site: pd.DataFrame, representative: pd.DataFrame, fig_dir: Path) -> None:
+    """ΔPUE by EPA Level III ecoregion, Case 1 only, one representative facility per ecoregion.
+
+    Not an average across each ecoregion's facilities -- see
+    ``build_pue_wue_ensemble_summary.py``'s Assumptions log for why a single
+    representative site (Lei & Masanet's own convention) was used instead.
+    """
+    sub = by_site[(by_site["archetype"] == "ae-chiller") & (by_site["metric"] == "pue_mean")]
+    sub = sub.merge(representative[["facility_id", "ecoregion", "n_facilities_in_ecoregion"]], on="facility_id")
+    ecoregion_order = representative.sort_values("n_facilities_in_ecoregion", ascending=False)["ecoregion"].tolist()
+
+    # Dot + whisker, not a bar: cross-ecoregion PUE differences are small
+    # relative to PUE's own scale, so zero-anchored bars would look nearly
+    # identical -- see _grouped_dot_whisker's docstring for the same reasoning.
+    fig, ax = plt.subplots(figsize=(10.5, 5.5))
+    x = np.arange(len(ecoregion_order))
+    offset = 0.12
+    for i, period in enumerate(PERIOD_ORDER):
+        vals = sub[sub["period"] == period].set_index("ecoregion").reindex(ecoregion_order)
+        lo = vals["mean"] - vals["p05"]
+        hi = vals["p95"] - vals["mean"]
+        xi = x + (i - 1) * offset
+        ax.errorbar(
+            xi, vals["mean"], yerr=[lo, hi], fmt="o", markersize=6,
+            color=PERIOD_COLORS[period], ecolor=PERIOD_COLORS[period],
+            elinewidth=1.3, capsize=4, markeredgecolor=INK_PRIMARY, markeredgewidth=0.6,
+            label=PERIOD_LABELS[period].split("\n")[0],
+        )
+    n_by_region = representative.set_index("ecoregion").reindex(ecoregion_order)["n_facilities_in_ecoregion"]
+    labels = [f"{textwrap.fill(r, 16)}\n(n={n})" for r, n in zip(ecoregion_order, n_by_region, strict=True)]
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, fontsize=7.5)
+    ax.set_xlim(x[0] - 0.4, x[-1] + 0.4)
+    ax.set_ylabel("Representative-site PUE (Case 1)")
+    ax.legend(frameon=False, fontsize=8.5)
+    ax.set_title("Figure 9. PUE by EPA Level III ecoregion (Omernik 1987)\none representative facility per ecoregion, ensemble mean + 5th-95th pct.", fontsize=10)
+    fig.tight_layout()
+    fig.savefig(fig_dir / "figure9_ecoregion_representative_sites.png", bbox_inches="tight")
+    plt.close(fig)
+
+
 # --------------------------------------------------------------------------
 # Tables
 # --------------------------------------------------------------------------
@@ -283,6 +454,7 @@ def table1_data_sources(tab_dir: Path) -> None:
         {"Data": "Facility inventory", "Source": "IM3/PNNL open-source data center atlas, 109 Oregon facilities", "Use": "Site locations for all facility-level analysis"},
         {"Data": "Elevation", "Source": "LOCA elevation field (elevation.LOCA_2016-04-02.nc)", "Use": "Elevation-adjusted atmospheric pressure"},
         {"Data": "PUE/WUE model", "Source": "Lei & Masanet (2022), Cases 1/2/5 (Table B.1 midpoint parameters)", "Use": "Cooling-system physics"},
+        {"Data": "Ecoregion boundaries", "Source": "EPA Level III Ecoregions of Oregon (Omernik 1987 scheme)", "Use": "Sub-region grouping and representative-site selection (Figure 9 / Table 5)"},
     ]
     pd.DataFrame(rows).to_csv(tab_dir / "table1_data_sources.csv", index=False)
 
@@ -320,6 +492,23 @@ def table4_summary_statistics(statewide: pd.DataFrame, tab_dir: Path) -> None:
     out.to_csv(tab_dir / "table4_summary_statistics.csv", index=False)
 
 
+def table5_ecoregion_representative_sites(by_site: pd.DataFrame, representative: pd.DataFrame, tab_dir: Path) -> None:
+    """Representative-site PUE/WUE by EPA Level III ecoregion -- see Figure 9's docstring."""
+    # by_site already carries its own facility_name/lon/lat (from facilities_geo
+    # in build_pue_wue_ensemble_summary.py) -- select only representative's
+    # non-duplicate columns before merging so pandas doesn't _x/_y-suffix them.
+    rep_cols = representative[["facility_id", "ecoregion", "n_facilities_in_ecoregion", "facility_name", "distance_to_centroid_m"]]
+    sub = by_site.drop(columns=["facility_name"]).merge(rep_cols, on="facility_id")
+    out = sub.copy()
+    out["mean_p05_p95"] = out.apply(lambda r: f"{r['mean']:.4f} ({r['p05']:.4f}-{r['p95']:.4f})", axis=1)
+    out = out[[
+        "ecoregion", "n_facilities_in_ecoregion", "facility_name", "distance_to_centroid_m",
+        "metric", "archetype", "period", "mean_p05_p95", "mean", "median", "p05", "p95", "n",
+    ]].rename(columns={"facility_name": "representative_facility_name"})
+    out = out.sort_values(["n_facilities_in_ecoregion", "ecoregion", "metric", "archetype", "period"], ascending=[False, True, True, True, True])
+    out.to_csv(tab_dir / "table5_ecoregion_representative_sites.csv", index=False)
+
+
 def run(args: argparse.Namespace) -> None:
     _apply_style()
     root = Path(args.repo_root).resolve()
@@ -334,6 +523,7 @@ def run(args: argparse.Namespace) -> None:
     statewide = pd.read_csv(analysis_dir / "ensemble_summary_statewide.csv")
     by_site = pd.read_csv(analysis_dir / "ensemble_summary_by_site.csv")
     delta = pd.read_csv(analysis_dir / "ensemble_delta.csv")
+    representative = pd.read_csv(analysis_dir / "ecoregion_representative_facilities.csv")
 
     print("Figure 1 (site map)...")
     figure1_site_map(by_site, fig_dir)
@@ -356,6 +546,8 @@ def run(args: argparse.Namespace) -> None:
         print(f"Figure 7 skipped -- {heat_summary_path} not found (run aggregate_heat_ensemble.py first)")
     print("Figure 8 (ensemble spread)...")
     figure8_ensemble_spread(period_summary, fig_dir)
+    print("Figure 9 (ecoregion representative sites)...")
+    figure9_ecoregion_representative_sites(by_site, representative, fig_dir)
 
     print("Table 1 (data sources)...")
     table1_data_sources(tab_dir)
@@ -365,6 +557,8 @@ def run(args: argparse.Namespace) -> None:
     table3_historical_validation(period_summary, by_site, tab_dir)
     print("Table 4 (summary statistics)...")
     table4_summary_statistics(statewide, tab_dir)
+    print("Table 5 (ecoregion representative sites)...")
+    table5_ecoregion_representative_sites(by_site, representative, tab_dir)
 
     print(f"Wrote figures to {fig_dir}, tables to {tab_dir}")
 

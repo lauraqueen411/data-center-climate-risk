@@ -29,9 +29,28 @@ Outputs (``outputs/ensemble_pue_wue_facilities/analysis/``):
   metric): ensemble mean/median/5th/95th-percentile across GCMs only.
 - ``ensemble_delta.csv`` -- per (facility, gcm, archetype): historical value
   plus mid-century/end-century deltas, for both PUE and WUE.
+- ``ecoregion_representative_facilities.csv`` -- one row per EPA Level III
+  ecoregion (Omernik 1987) that contains at least one facility: the single
+  facility nearest that ecoregion's own facility centroid, plus how many
+  facilities the ecoregion contains and how far the pick sits from the
+  centroid. Feeds Figure 9 / Table 5 (the sub-region breakdown) in
+  ``scripts/build_pue_wue_ensemble_figures.py``.
 
 Assumptions log
 ----------------
+- **One representative facility per ecoregion, not an average of the
+  ecoregion's climate inputs** -- follows Lei & Masanet (2022)'s own
+  precedent of representing a climate region with one representative point
+  (their per-IECC/ASHRAE-zone representative city) rather than spatially
+  averaging temperature/humidity across many points first, which would run
+  into Jensen's-inequality problems given the model's thresholded
+  economizer/chiller switching. The representative facility is the one
+  nearest the ecoregion's own facility-cluster centroid (computed in
+  ``CRS_EQUAL_AREA`` metres via ``geo.select_representative_facility``), not
+  the ecoregion polygon's geographic centroid -- this ties the pick to where
+  exposure actually clusters. No new model run is needed: the representative
+  facility's daily PUE/WUE was already computed as part of the full 109-site
+  run, so this step is a selection, not a computation.
 - **95th percentile, not max**, for the per-facility-per-gcm period summary
   -- a single extreme day's outlier shouldn't set a facility's whole-period
   "extreme" characterization; matches the same p95-over-max choice already
@@ -50,9 +69,12 @@ import argparse
 import re
 from pathlib import Path
 
+import geopandas as gpd
 import pandas as pd
 
 from climate_risk_dc.climate.ensemble_summary import compute_period_deltas, ensemble_summary_stats
+from climate_risk_dc.config import load_dataset_paths
+from climate_risk_dc.geo import assign_us_l3_ecoregion, points_from_lonlat, select_representative_facility
 
 FNAME_RE = re.compile(
     r"facility_pue_wue_(?P<gcm>.+)_ssp370_(?P<archetype>ae-chiller|we-chiller|chiller-only)_"
@@ -116,6 +138,20 @@ def run(args: argparse.Namespace) -> None:
     facilities_geo = dc_atlas[dc_atlas["state_abb"] == "OR"][["id", "name", "lon", "lat"]].rename(
         columns={"id": "facility_id", "name": "facility_name"}
     )
+
+    ecoregions = gpd.read_file(load_dataset_paths().ecoregion_l3_shp)
+    facilities_points = points_from_lonlat(facilities_geo)
+    facilities_labeled = assign_us_l3_ecoregion(facilities_points, ecoregions)
+    assert facilities_labeled["US_L3NAME"].notna().all(), "Facilities outside every Oregon Level III ecoregion polygon"
+    facilities_geo = pd.DataFrame(facilities_labeled.drop(columns="geometry"))
+
+    representative = select_representative_facility(facilities_labeled, "US_L3NAME")
+    representative = representative.rename(
+        columns={"US_L3NAME": "ecoregion", "n_facilities_in_group": "n_facilities_in_ecoregion"}
+    )[["ecoregion", "facility_id", "facility_name", "lon", "lat", "n_facilities_in_ecoregion", "distance_to_centroid_m"]]
+    representative.to_csv(out_dir / "ecoregion_representative_facilities.csv", index=False)
+    print("Ecoregion representative facilities (nearest to each ecoregion's own facility centroid):")
+    print(representative.to_string(index=False))
 
     print("Aggregating 180 raw daily facility CSVs (this reads ~23GB total)...")
     period_summary, month_summary = aggregate_raw_files(fac_dir)

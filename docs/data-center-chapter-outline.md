@@ -52,6 +52,8 @@ Built Environment and Infrastructure, alongside the offshore wind chapter — se
 
 ## 3. Results
 
+**Superseded 2026-09-15**: the numbered plan and the "Candidate figures and tables" catalog below reflect the original nine-figure, raw-value-led design. That design has been replaced by a four-figure, delta-first structure, arrived at by requiring each figure to state one verifiable claim rather than hold as many dimensions as possible. `docs/results-draft.md` is now the authoritative Results outline; its own header explains what was tried and rejected along the way (a percent-change chart needing three separate axis reads, and a facility-level correlation that turned out to be a correlation-of-ratios artifact). The list below is kept for historical reference only.
+
 Proposed order, each tied to a figure/table (full list below):
 
 1. Historical (baseline) fleet characterization — statewide mean PUE and WUE by archetype, with ensemble spread. Establishes where Oregon's fleet sits today (recall the earlier single-GCM/Case-1-only result: fleet PUE ~1.12, low end of industry range — now check whether that holds up across the full ensemble and the other two archetypes).
@@ -59,7 +61,7 @@ Proposed order, each tied to a figure/table (full list below):
 3. Extreme heat index trends (exceedance-days) alongside PUE trends — connects the acute-risk metric (Section 1.1) to the chronic-risk metric (Section 1.2) directly, which is exactly the "compound risk" framing the methods doc already sets up.
 4. Archetype comparison — Case 1 and Case 2 are both large-scale designs with an economizer (airside+adiabatic vs. waterside) while Case 5 has none; does that split (rather than a single graded "amount of free cooling" axis, see the corrected Table 2 above) change climate sensitivity, on top of the baseline absolute-PUE gap the source paper already documents? **Confirmed**: Case 1 shows real climate sensitivity (WUE nearly doubles from historical to end-of-century, seasonal peak shifts July→August) while Case 2 and Case 5 are nearly flat across periods — Case 1's WUE < Case 2's WUE ordering (a specific published finding) holds strongly under Oregon's climate (0.25 vs. 2.08 L/kWh historically), and persists under warming.
 5. Site-level / spatial variation across the 109 facilities — does location within Oregon matter (Willamette Valley vs. high desert vs. Gorge)?
-6. (Contingent) Climate sub-region breakdown, if you decide to do that analysis — flagged as optional per your note that you're not yet sure.
+6. **Climate sub-region breakdown (resolved 2026-09-15)** — EPA Level III ecoregions (Omernik 1987), matching OCA7's own convention of presenting results averaged across U.S. Level III ecoregions in Oregon (Fig. 1). Rather than averaging temperature/humidity across each ecoregion's facilities before running the PUE/WUE model — which would run into Jensen's-inequality problems given the model's thresholded economizer/chiller switching — one representative facility per ecoregion was selected (nearest to that ecoregion's own facility-cluster centroid) and its already-computed daily PUE/WUE pulled directly from the 109-site run, following Lei & Masanet (2022)'s own convention of representing a climate zone with one representative point (their per-IECC/ASHRAE-zone representative city, run on a full year of TMY data) rather than an average. Of Oregon's 9 Level III ecoregions, 5 contain at least one facility: Columbia Plateau (61), Willamette Valley (33), Blue Mountains (13), Eastern Cascades Slopes and Foothills (1), Klamath Mountains/California High North Coast Range (1).
 
 ## 4. Discussion / Implications for Adaptation
 
@@ -86,6 +88,8 @@ Carry over methods-document.md's reference list wholesale (Lei & Masanet 2020/20
 
 ## Candidate figures and tables
 
+**Superseded 2026-09-15** — see the note under Section 3 above. This nine-figure/five-table catalog is kept for historical reference; the current figure set (four figures, built by `scripts/build_results_delta_figures.py`) is documented in `docs/results-draft.md`.
+
 Ordered roughly as they'd appear in Results. Each entry notes the OCA7 convention it's modeled on and what the CLI analysis task needs to produce it.
 
 **Figure 1 — Site map.** All 109 Oregon data center locations, sized/colored by historical baseline PUE (or by IT capacity if available). Modeled directly on OCA7's Figure 1 (offshore wind resource map) — a context-setting map before any results. Good opener. Built: `outputs/ensemble_pue_wue_facilities/figures/figure1_site_map.png`.
@@ -104,7 +108,7 @@ Ordered roughly as they'd appear in Results. Each entry notes the OCA7 conventio
 
 **Figure 8 — Ensemble spread / structural uncertainty.** Spaghetti plot or fan chart of statewide-mean PUE trajectory across individual GCMs, historical through end-century — makes the inter-model spread visible in a way Figure 2's whiskers only summarize; useful if reviewers will ask "how much does the choice of GCM matter here." Built: inter-model spread turns out to be small relative to the multi-decadal warming trend for all three archetypes. `outputs/ensemble_pue_wue_facilities/figures/figure8_ensemble_spread.png`.
 
-**Figure 9 (contingent) — ΔPUE by climate sub-region.** Only if you do the sub-region aggregation — box plots grouped by whatever regional scheme you'd use (NOAA climate divisions or an Oregon-specific ecoregion split, to stay consistent with how other OCA7 chapters regionalize, e.g. "Cascades ecoregion" language in the precipitation chapter).
+**Figure 9 — PUE by EPA Level III ecoregion.** Resolved (2026-09-15): grouped bars by ecoregion x period, Case 1 only, one representative facility per ecoregion (see Results item 6 above) — ensemble mean + 5th-95th pct. whiskers, same convention as Figure 2. Built: `outputs/ensemble_pue_wue_facilities/figures/figure9_ecoregion_representative_sites.png`.
 
 **Table 1 — Data sources.** Adapt directly from methods-document.md's existing table, updated for the site-based/ensemble/multi-archetype specifics (GCM count actually used, humidity source once confirmed, archetype definitions once confirmed). Built: `outputs/ensemble_pue_wue_facilities/tables/table1_data_sources.csv`.
 
@@ -113,3 +117,5 @@ Ordered roughly as they'd appear in Results. Each entry notes the OCA7 conventio
 **Table 3 — Historical validation.** Modeled vs. published/utility PUE at Prineville and The Dalles, ensemble spread vs. single-GCM point estimate, for Case 1 (the archetype both real facilities' documented cooling systems and the paper's own validation set actually match — Case 2/5 weren't checked against these two specific facilities, since they're a different economizer type/size class). Built: `outputs/ensemble_pue_wue_facilities/tables/table3_historical_validation.csv` — ensemble mean matches the single-GCM point estimate almost exactly at both sites.
 
 **Table 4 — Summary statistics.** Ensemble mean ± 5th–95th percentile range, PUE and WUE, by period × archetype, statewide — the numeric backbone the Executive-Summary paragraph (bolded lead-in, OCA7 style) would be drawn from. Built: `outputs/ensemble_pue_wue_facilities/tables/table4_summary_statistics.csv`.
+
+**Table 5 — Ecoregion representative sites.** Ensemble mean ± 5th–95th percentile range, PUE and WUE, by EPA Level III ecoregion × period × archetype, one representative facility per ecoregion (see Results item 6). Built: `outputs/ensemble_pue_wue_facilities/tables/table5_ecoregion_representative_sites.csv`.
