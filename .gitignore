@@ -17,3 +17,7 @@ __pycache__/
 # outputs
 outputs/
 *.log
+
+# drafts and large references (local only)
+docs/*.docx
+papers/OCA7_full.pdf
