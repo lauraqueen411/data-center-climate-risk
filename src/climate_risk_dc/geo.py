@@ -173,6 +173,96 @@ def assign_oregon_region(lon: np.ndarray, lat: np.ndarray) -> np.ndarray:
     return labels
 
 
+def assign_us_l3_ecoregion(
+    assets: gpd.GeoDataFrame, ecoregions: gpd.GeoDataFrame
+) -> gpd.GeoDataFrame:
+    """Label each asset with its EPA Level III ecoregion (Omernik 1987 scheme).
+
+    Thin wrapper around :func:`spatial_label` for the specific
+    ``US_L3CODE``/``US_L3NAME`` fields in EPA's ecoregion shapefiles (see
+    :data:`climate_risk_dc.config.DatasetPaths.ecoregion_l3_shp`) -- kept
+    generic (point-in-polygon join, not ecoregion-specific logic) so it stays
+    a thin pass-through rather than duplicating ``spatial_label``.
+
+    An asset outside every polygon gets ``NaN`` for both fields (from
+    ``spatial_label``'s left join), unlike the informal
+    :func:`assign_oregon_region`, which labels such points
+    ``"Unclassified"`` -- the two functions differ deliberately: the EPA
+    shapefile is expected to fully cover the state, so an unmatched point
+    signals a real data problem worth surfacing as NaN, not a named category.
+
+    Parameters
+    ----------
+    assets:
+        Point geometries to label (e.g. data center facilities).
+    ecoregions:
+        EPA Level III ecoregion polygons with ``US_L3CODE``/``US_L3NAME``
+        columns (loaded from ``DatasetPaths.ecoregion_l3_shp``).
+
+    Returns
+    -------
+    geopandas.GeoDataFrame
+        Copy of ``assets`` with ``US_L3CODE`` and ``US_L3NAME`` columns
+        appended.
+    """
+    return spatial_label(assets, ecoregions, ["US_L3CODE", "US_L3NAME"])
+
+
+def select_representative_facility(
+    assets: gpd.GeoDataFrame, group_col: str
+) -> pd.DataFrame:
+    """Pick the single facility nearest each group's own facility centroid.
+
+    Used to choose one representative data center per ecoregion for the
+    sub-regional PUE/WUE breakdown, following Lei & Masanet (2022)'s own
+    convention of representing a climate region with one representative
+    point run through the model in full, rather than averaging climate
+    inputs across many points first (which would run into Jensen's
+    inequality problems given the model's thresholded economizer/chiller
+    switching behavior -- see ``docs/data-center-chapter-outline.md``).
+
+    Deliberately simple: the "centroid" is the group's own mean facility
+    position (not the ecoregion polygon's geographic centroid), computed in
+    the equal-area CRS so distances are in metres, not degrees -- consistent
+    with the project's existing distance-computation convention
+    (:func:`nearest_distance_m`). This ties the representative point to
+    where facilities actually cluster (exposure-weighted) rather than an
+    arbitrary polygon shape. A group with one member trivially returns that
+    member (distance 0).
+
+    Parameters
+    ----------
+    assets:
+        Point geometries with a ``group_col`` column to group by (e.g.
+        facilities already labelled with ``US_L3NAME``).
+    group_col:
+        Column name to group by (e.g. ``"US_L3NAME"``).
+
+    Returns
+    -------
+    pandas.DataFrame
+        One row per group: all of ``assets``' original columns for the
+        selected representative facility, plus ``n_facilities_in_group`` and
+        ``distance_to_centroid_m``. Rows with a missing ``group_col`` value
+        are dropped rather than grouped together.
+    """
+    ea = to_equal_area(assets).dropna(subset=[group_col]).copy()
+    ea["_x"] = ea.geometry.x
+    ea["_y"] = ea.geometry.y
+
+    rows = []
+    for _, sub in ea.groupby(group_col, observed=True):
+        centroid_x, centroid_y = sub["_x"].mean(), sub["_y"].mean()
+        distance_m = np.hypot(sub["_x"] - centroid_x, sub["_y"] - centroid_y)
+        rep_idx = distance_m.idxmin()
+        rep = sub.loc[rep_idx].drop(labels=["_x", "_y"]).to_dict()
+        rep["n_facilities_in_group"] = len(sub)
+        rep["distance_to_centroid_m"] = float(distance_m.loc[rep_idx])
+        rows.append(rep)
+
+    return pd.DataFrame(rows).drop(columns=["geometry"])
+
+
 def to_equal_area(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     """Reproject to the project equal-area CRS for metric computations."""
     return gdf.to_crs(CRS_EQUAL_AREA)

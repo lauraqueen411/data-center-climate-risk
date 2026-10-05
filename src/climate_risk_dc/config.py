@@ -58,6 +58,9 @@ class DatasetPaths:
         USEPA/USGS water-service-area polygons (``WSA_v1``).
     watershed_gdb_zip:
         Zipped USGS Watershed Boundary Dataset (national GDB, HUC polygons).
+    ecoregion_l3_shp:
+        EPA Level III Ecoregions of Oregon shapefile (Omernik 1987 scheme,
+        CONUS-wide EPA product clipped to Oregon).
     """
 
     data_centers_gpkg: Path
@@ -65,6 +68,7 @@ class DatasetPaths:
     fiber_csv: Path
     water_service_areas_shp: Path
     watershed_gdb_zip: Path
+    ecoregion_l3_shp: Path
 
 
 def _default_paths() -> DatasetPaths:
@@ -86,6 +90,10 @@ def _default_paths() -> DatasetPaths:
         watershed_gdb_zip=DATA_DIR
         / "watershed_boundaries"
         / "WBD_National_GDB.zip",
+        ecoregion_l3_shp=DATA_DIR
+        / "ecoregions"
+        / "or_eco_l3"
+        / "or_eco_l3.shp",
     )
 
 
@@ -130,4 +138,5 @@ def load_dataset_paths(config_file: Path | None = None) -> DatasetPaths:
         fiber_csv=_resolve("fiber_csv"),
         water_service_areas_shp=_resolve("water_service_areas_shp"),
         watershed_gdb_zip=_resolve("watershed_gdb_zip"),
+        ecoregion_l3_shp=_resolve("ecoregion_l3_shp"),
     )
