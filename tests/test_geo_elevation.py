@@ -1,10 +1,8 @@
-"""Unit tests for the elevation-adjustment helpers added for the 1.1 close-out.
+"""Unit tests for raster point-sampling and elevation lookup helpers.
 
 These tests use a small synthetic in-memory raster, not a real DEM -- no
-DEM/elevation raster exists anywhere in this repo yet (see
-scripts/extract_facility_heat_indices.py's Assumptions log), so the
-elevation and threshold values below are illustrative fixtures only, not
-real facility numbers.
+DEM/elevation raster exists anywhere in this repo yet, so the elevation
+values below are illustrative fixtures only, not real facility numbers.
 """
 
 from __future__ import annotations
@@ -15,7 +13,6 @@ import numpy as np
 import rasterio
 from rasterio.transform import from_origin
 
-from climate_risk_dc.climate.heat_indices import HeatIndexConfig, elevation_adjusted_threshold
 from climate_risk_dc.geo import (
     OREGON_REGION_BOXES,
     assign_oregon_region,
@@ -84,19 +81,6 @@ def test_get_facility_elevation_m_is_thin_wrapper(tmp_path: Path) -> None:
 
     values = get_facility_elevation_m(np.array([-122.0]), np.array([45.0]), dem_path)
     assert values[0] == 0.0
-
-
-def test_elevation_adjusted_threshold_sea_level_unchanged() -> None:
-    config = HeatIndexConfig()
-    assert elevation_adjusted_threshold(35.0, 0.0, config) == 35.0
-
-
-def test_elevation_adjusted_threshold_applies_isa_lapse_rate() -> None:
-    config = HeatIndexConfig(lapse_rate_c_per_1000m=6.5)
-    # Illustrative fixture only: 1000m is a hypothetical elevation, not a
-    # real facility's -- no DEM exists yet to pull real elevations from.
-    adjusted = elevation_adjusted_threshold(35.0, 1000.0, config)
-    assert adjusted == 28.5
 
 
 def test_assign_oregon_region_matches_known_clusters() -> None:

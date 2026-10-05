@@ -114,14 +114,11 @@ Assumptions log
   systematic downward correction, per the paper's own Table B.1 -- not a
   transcription oddity.
 - **Elevation-adjusted pressure** (``elevation_adjusted_pressure_pa``) uses
-  the standard NOAA/ICAO barometric formula for the troposphere; this is a
-  different physical quantity from ``heat_indices.elevation_adjusted_threshold``
-  (a temperature lapse-rate adjustment), so it is not a duplicate of
-  existing repo logic. Replaces the standard-atmosphere assumption
-  (101325 Pa) both papers' reference implementations use, per the ensemble
-  task's Phase 2 instructions -- matters far more here than for the
-  facility-level pipeline, since Oregon's grid spans sea level to
-  Cascades summits.
+  the standard NOAA/ICAO barometric formula for the troposphere. Replaces
+  the standard-atmosphere assumption (101325 Pa) both papers' reference
+  implementations use, per the ensemble task's Phase 2 instructions --
+  matters far more here than for the facility-level pipeline, since
+  Oregon's grid spans sea level to Cascades summits.
 """
 
 from __future__ import annotations

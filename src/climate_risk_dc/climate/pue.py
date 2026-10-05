@@ -36,8 +36,7 @@ Assumptions log
   module uses the paper's wider range (midpoint 2.1), not the notebook's.
 - ``p_atm_pa`` (default 101325 Pa, standard atmosphere) is a marked
   extension point for a future per-facility elevation adjustment once a DEM
-  exists in the repo, mirroring the 1.1 elevation-adjustment pattern
-  (``geo.get_facility_elevation_m`` / ``heat_indices.elevation_adjusted_threshold``).
+  exists in the repo (``geo.get_facility_elevation_m``).
 - ``power_it_kw`` defaults to 1 kW, matching the source repo's convention:
   PUE is a dimensionless ratio (total facility power / IT power), so the
   absolute IT power scale does not change the result unless it interacts

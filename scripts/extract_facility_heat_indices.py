@@ -13,13 +13,8 @@ Assumptions log
   computed from historical to each future period separately -- see
   ``docs/tasks/0.2-fix-loca2-window-resolver-and-time-horizons.md``.
 - Uses the flat 35C exceedance threshold already baked into those rasters
-  for tmax_threshold_days / heatwave_events.
-- Elevation-adjusted threshold values (see
-  climate_risk_dc.climate.heat_indices.elevation_adjusted_threshold) are NOT
-  wired into this table yet: no DEM/elevation raster exists anywhere in this
-  repo, so there is no real per-facility elevation to adjust with. Adding an
-  adjusted-threshold column here is a follow-up once a DEM source is
-  available -- flagged explicitly, not a silent omission.
+  for tmax_threshold_days / heatwave_events, applied uniformly regardless
+  of facility elevation.
 - Facilities with a null 'name' in the source atlas (a handful of
   Prineville/PDX parcels) are still included; only lon/lat/state_abb are
   required to build the table.
