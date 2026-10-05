@@ -55,7 +55,9 @@ Assumptions log
   recovered with the same nearest-cell rule
   (``loca2_io.sample_datacube_at_points``) on the Oregon LOCA2 grid in the
   humidity cache. Verified: 22 cells, matching 22 distinct daily input
-  series across the 109 facilities.
+  series across the 109 facilities. The result is saved to
+  ``facility_grid_cells.csv`` and reused on later runs, so a rebuild needs
+  neither the humidity cache nor the daily files once both caches exist.
 - **Band percentiles** use ``np.percentile`` with default linear
   interpolation over 20 values. All three band choices are written to the
   ecoregion CSV whatever ``BAND`` is.
@@ -147,6 +149,38 @@ FNAME_RE = re.compile(
 # ---------------------------------------------------------------------------
 
 
+def _grid_cells(root: Path, fac: pd.DataFrame) -> pd.DataFrame:
+    """LOCA2 grid cell per facility (facility_id, grid_cell, grid_lat, grid_lon).
+
+    Read from ``facility_grid_cells.csv`` (written by every run) when present,
+    so the figure can be rebuilt without the 700 MB humidity-cache NetCDF.
+    Otherwise recomputed with the same nearest-cell rule as
+    ``loca2_io.sample_datacube_at_points``, on the Oregon LOCA2 grid the
+    PUE/WUE run sampled from.
+    """
+    cols = ["facility_id", "grid_cell", "grid_lat", "grid_lon"]
+    cached = _out_dir(root) / "facility_grid_cells.csv"
+    if cached.exists():
+        cells = pd.read_csv(cached, usecols=cols)
+        missing = set(fac["facility_id"]) - set(cells["facility_id"])
+        if missing:
+            raise ValueError(f"{cached.name} lacks {len(missing)} facilities; delete it to recompute from the LOCA2 grid")
+        return cells
+
+    grid_file = next((root / "outputs/ensemble_pue_wue/humidity_cache").glob("hursmax_hursmin_*_historical_historical.nc"))
+    with xr.open_dataset(grid_file) as grid:
+        lat_vals, lon_vals = grid["lat"].values.astype(float), grid["lon"].values.astype(float)
+    lon_q = np.where(fac["lon"] < 0, fac["lon"] + 360.0, fac["lon"]) if lon_vals.max() > 180 else fac["lon"].to_numpy()
+    ilat = np.abs(lat_vals[:, None] - fac["lat"].to_numpy()[None, :]).argmin(axis=0)
+    ilon = np.abs(lon_vals[:, None] - lon_q[None, :]).argmin(axis=0)
+    return pd.DataFrame({
+        "facility_id": fac["facility_id"].to_numpy(),
+        "grid_cell": [f"{a}_{b}" for a, b in zip(ilat, ilon)],
+        "grid_lat": lat_vals[ilat],
+        "grid_lon": lon_vals[ilon],
+    })
+
+
 def _facility_table(root: Path) -> pd.DataFrame:
     """Facility id, name, lon/lat, ecoregion, LOCA2 grid cell and pressure."""
     import geopandas as gpd
@@ -161,17 +195,7 @@ def _facility_table(root: Path) -> pd.DataFrame:
     out = pd.DataFrame(labeled.drop(columns="geometry"))[["id", "name", "lon", "lat", "US_L3NAME"]]
     out = out.rename(columns={"id": "facility_id", "name": "facility_name", "US_L3NAME": "ecoregion"})
 
-    # LOCA2 grid cell: same nearest-cell rule as loca2_io.sample_datacube_at_points,
-    # on the Oregon LOCA2 grid the PUE/WUE run sampled from.
-    grid_file = next((root / "outputs/ensemble_pue_wue/humidity_cache").glob("hursmax_hursmin_*_historical_historical.nc"))
-    with xr.open_dataset(grid_file) as grid:
-        lat_vals, lon_vals = grid["lat"].values.astype(float), grid["lon"].values.astype(float)
-    lon_q = np.where(out["lon"] < 0, out["lon"] + 360.0, out["lon"]) if lon_vals.max() > 180 else out["lon"].to_numpy()
-    ilat = np.abs(lat_vals[:, None] - out["lat"].to_numpy()[None, :]).argmin(axis=0)
-    ilon = np.abs(lon_vals[:, None] - lon_q[None, :]).argmin(axis=0)
-    out["grid_cell"] = [f"{a}_{b}" for a, b in zip(ilat, ilon)]
-    out["grid_lat"] = lat_vals[ilat]
-    out["grid_lon"] = lon_vals[ilon]
+    out = out.merge(_grid_cells(root, out), on="facility_id", validate="one_to_one")
 
     # Elevation-adjusted pressure, as in run_pue_wue_facilities.sample_elevation_at_points
     elev = xr.open_dataset(root / "data/elevation.LOCA_2016-04-02.nc")["Elevation"]
