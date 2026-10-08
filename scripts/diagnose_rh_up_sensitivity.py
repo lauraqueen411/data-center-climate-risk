@@ -25,8 +25,14 @@ Assumptions log
 ----------------
 - Dewpoint uses the Magnus formula (Alduchov and Eskridge 1996 constants);
   the error near 21 C is well under 0.1 C, negligible for a count.
-- Thresholds come from ``Case1Config`` (t_lw 14 C, t_up 31 C, dp_up 21 C);
-  ``RH_UP_MID`` is the Table B.1 midpoint of 60-95%.
+- Thresholds come from ``Case1Config`` (t_lw 14 C, t_up 31 C, dp_up 21 C).
+  The two setpoints are fixed here, not read from ``Case1Config``:
+  ``RH_UP_RUN`` = 60 (the value the superseded outputs used) and
+  ``RH_UP_MID`` = 77.5 (the Table B.1 midpoint of 60-95%, now the default).
+  The first version read the "as run" value from ``Case1Config`` and so
+  compared 77.5 with 77.5 after the correction, returning zero everywhere.
+- The weather columns are identical in the old and rerun files, so
+  ``--fac-dir`` can point at either set.
 """
 
 from __future__ import annotations
@@ -40,6 +46,7 @@ import pandas as pd
 
 from climate_risk_dc.climate.cooling_archetypes import Case1Config
 
+RH_UP_RUN = 60.0
 RH_UP_MID = 77.5
 PERIODS = ("historical", "midcentury")
 FNAME_RE = re.compile(r"facility_pue_wue_(?P<gcm>.+)_ssp370_ae-chiller_(?P<period>historical|midcentury)_fast\.csv")
@@ -52,13 +59,13 @@ def dewpoint_c(t_c: np.ndarray, rh_pct: np.ndarray) -> np.ndarray:
 
 
 def affected(t_c: np.ndarray, rh_pct: np.ndarray, cfg: Case1Config) -> np.ndarray:
-    return ((t_c >= cfg.t_lw_c) & (t_c < cfg.t_up_c) & (rh_pct > cfg.rh_up_pct) & (rh_pct <= RH_UP_MID)
+    return ((t_c >= cfg.t_lw_c) & (t_c < cfg.t_up_c) & (rh_pct > RH_UP_RUN) & (rh_pct <= RH_UP_MID)
             & (dewpoint_c(t_c, rh_pct) <= cfg.dp_up_c))
 
 
 def run(args: argparse.Namespace) -> None:
     root = Path(args.repo_root).resolve()
-    fac_dir = root / "outputs/ensemble_pue_wue_facilities"
+    fac_dir = Path(args.fac_dir) if args.fac_dir else root / "outputs/ensemble_pue_wue_facilities"
     cfg = Case1Config()
     files = sorted(f for f in fac_dir.glob("facility_pue_wue_*_ssp370_ae-chiller_*_fast.csv") if FNAME_RE.match(f.name))
     if len(files) != 40:
@@ -76,7 +83,7 @@ def run(args: argparse.Namespace) -> None:
         parts.append(g)
         print(f"{f.name}: hot {d['hot'].mean():.3%}, cool {d['cool'].mean():.3%} of days affected")
     out = pd.concat(parts, ignore_index=True)
-    path = fac_dir / "analysis" / "rh_up_sensitivity_counts.csv"
+    path = root / "outputs/ensemble_pue_wue_facilities/analysis/rh_up_sensitivity_counts.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(path, index=False)
     print(f"\nWrote {path} ({len(out)} rows)")
@@ -85,6 +92,8 @@ def run(args: argparse.Namespace) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Count Case 1 pairings sensitive to the upper RH setpoint.")
     parser.add_argument("--repo-root", default=".", help="Repository root path (default: current directory)")
+    parser.add_argument("--fac-dir", default=None,
+                        help="Folder holding the Case 1 daily files (default outputs/ensemble_pue_wue_facilities)")
     return parser.parse_args()
 
 
