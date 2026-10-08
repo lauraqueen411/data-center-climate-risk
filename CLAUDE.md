@@ -1,10 +1,12 @@
 # climate-risk-dc — project instructions for Claude Code
 
-Oregon data-center physical climate risk analysis (heat + flood). `docs/methods-document.md` (full methods) and `docs/code-development-plan.md` (live task checklist) are the source of truth — read both before starting substantive work. The plan tracks what's done vs. open as checkboxes; keep it current as you go.
+Oregon data-center physical climate risk analysis (heat + flood). `docs/results-figures/methodology.md` (current heat-chapter methods, Figures 2–5 and their captions) and `docs/code-development-plan.md` (live task checklist) are the source of truth — read both before starting substantive work. The plan tracks what's done vs. open as checkboxes; keep it current as you go.
+
+All other text drafts are out of date and should not be read or used as a reference: `docs/methods-document.md`, `docs/heat-methodology-draft.md`, `docs/results-draft.md`, `docs/data-center-chapter-outline.md`. Files in `docs/tasks/` are task instructions: follow the one you are asked to run, but do not treat completed ones as a description of the current methods. Check methods claims against `methodology.md` and the code only.
 
 ## Scope boundaries — read before editing
 
-- **In current scope:** heat risk (1.1–1.3) and flood risk (2.1–2.5), per the methods doc.
+- **In current scope:** heat risk (1.1–1.3) and flood risk (2.1–2.5), per `docs/code-development-plan.md`.
 - **Out of current scope — do not extend:** `exposure/fiber.py`, `exposure/water.py`, `exposure/watersheds.py`, `DC_fiber_exposure.ipynb`, `DC_water_exposure.ipynb`, `test_public_water_sources.py`, and the fiber/water columns emitted by `build_dependency_table.py`. This is legacy work from an earlier, broader project phase. Leave it alone unless explicitly asked to revisit it.
 - **1.3 (infrastructure heat dependency) is intentionally lightweight for now**: a heat/dependency coincidence flag, not full IEEE C57.91 / IEEE 738 / ISO 8528-1 derating math. Don't build the full derating formulas unless asked — there's a marked extension point (`derating.py` stub) for that.
 
@@ -19,7 +21,7 @@ Oregon data-center physical climate risk analysis (heat + flood). `docs/methods-
 ## Conventions to follow
 
 - Frozen `@dataclass` for run/index configuration (see `HeatIndexConfig`, `RunConfig`, `TableConfig`).
-- Module docstrings include an "Assumptions log" section documenting simplifications and proxies — follow this pattern for any new module, especially anything involving an engineering approximation (derating rates, damage-function category choice, elevation adjustment rate, etc.). Don't silently pick a number the methods doc doesn't specify — document it as an assumption.
+- Module docstrings include an "Assumptions log" section documenting simplifications and proxies — follow this pattern for any new module, especially anything involving an engineering approximation (derating rates, damage-function category choice, elevation adjustment rate, etc.). Don't silently pick a number that `methodology.md` or the source papers don't specify — document it as an assumption.
 - Scripts are `argparse`-driven, take `--repo-root`, write to `outputs/<phase>/` with rasters/maps/summaries in separate subfolders plus a manifest CSV of run parameters.
 - CRS handling is explicit: `EPSG:4326` (geographic) for I/O and web mapping, `EPSG:5070` (`CRS_EQUAL_AREA` in `config.py`) for any distance/area computation — always reproject via `geo.py`'s helpers rather than computing distances in degrees.
 - Raster point-sampling: reuse `_sample_raster_values` (currently in `build_dependency_table.py`) rather than writing a new sampler — this belongs in a shared module (`geo.py`) if it isn't already.
