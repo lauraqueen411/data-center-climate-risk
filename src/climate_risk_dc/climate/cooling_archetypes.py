@@ -95,6 +95,14 @@ Assumptions log
   Table A.1 values in ``pue.py`` where the same parameter appears in both
   papers (``pcop`` bounds and ``l_to_g`` for the AE archetype match exactly
   between the two independently-extracted tables).
+- **Midpoint corrections (2026-10-08).** A line-by-line check against
+  Table B.1 found three defaults that were not midpoints: Case 1
+  ``rh_up_pct`` was 60.0 (range 60-95%, now 77.5), Case 5
+  ``delta_t_water_c`` was 5.0 (range 5-10 C, now 7.5) and Case 5
+  ``fan_pressure_ct_pa`` was 250 (range 200-400 Pa, now 300). The
+  facility ensemble was rerun for Cases 1 and 5 with the corrected values;
+  the earlier outputs are kept under
+  ``outputs/ensemble_pue_wue_facilities/superseded_rh_up60_2026-10-08/``.
 - **Percent vs. fraction convention**, matching the reference repo's own
   mixed convention rather than normalizing it away (to keep the port
   line-by-line checkable): ``UPS_e``, ``PD_lr``, ``L_percentage``, ``SHR``,
@@ -186,7 +194,7 @@ class Case1Config:
     t_lw_c: float = 14.0  # [10, 18]
     dp_up_c: float = 21.0  # [15, 27]
     dp_lw_c: float = -10.5  # [-12, -9]
-    rh_up_pct: float = 60.0  # [8, 20]... see note below
+    rh_up_pct: float = 77.5  # [60, 95]
     rh_lw_pct: float = 14.0  # raw percent, not fraction -- see Assumptions log
     pcop: float = 0.0  # [-0.11, 0.11]
 
@@ -250,7 +258,7 @@ class Case5Config:
     pump_pressure_hd_pa: float = 7_000_000.0  # [6.3e6, 7.7e6]
     pump_e_hd: float = 0.7  # [0.6, 0.8]
     hte: float = 0.775  # [0.65, 0.90]
-    delta_t_water_c: float = 5.0  # [4, 6]
+    delta_t_water_c: float = 7.5  # [5, 10]
     pump_pressure_cw_pa: float = 143_650.0  # [114900, 172400]
     pump_e_cw: float = 0.7  # [0.6, 0.8]
     at_ct_c: float = 4.75  # [2.8, 6.7]
@@ -260,7 +268,7 @@ class Case5Config:
     pump_e_ct: float = 0.7  # [0.6, 0.8]
     windage_p: float = 0.002525  # [0.00005, 0.005]
     cc: float = 7.5  # [3, 12]
-    fan_pressure_ct_pa: float = 250.0  # [100, 400]
+    fan_pressure_ct_pa: float = 300.0  # [200, 400]
     fan_e_ct: float = 0.70  # [0.60, 0.80]
     lg_ratio: float = 1.1  # [0.2, 2]
     t_up_c: float = 29.5  # [27, 32]

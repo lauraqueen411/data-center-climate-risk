@@ -1,0 +1,55 @@
+section,item,draft_value,computed_value,match
+3.1,"Historical exceedance days, CP",19.2,19.16,yes
+3.1,"Historical exceedance days, KM",17.6,17.63,yes
+3.1,"Historical exceedance days, BM",7.8,7.80,yes
+3.1,"Historical exceedance days, WV",4.1,4.12,yes
+3.1,"Historical exceedance days, ECSF",1.3,1.35,yes
+3.1,"Change in exceedance days, 2045–2074, CP",30.4,30.36,yes
+3.1,"Change in exceedance days, 2045–2074, WV",10.9,10.90,yes
+3.1,"Change in exceedance days, 2075–2100, CP",48.9,48.89,yes
+3.1,"Change in exceedance days, 2075–2100, WV",22.6,22.52,no
+3.1,WV has the smallest mid-century increase in exceedance days,WV,WV,yes
+3.1,"Case 1 change in PUE, 2045–2074, WV",0.021,0.0213,yes
+3.1,"Case 1 change in PUE, 2045–2074, KM",0.019,0.0187,yes
+3.1,"Case 1 change in PUE, 2045–2074, CP",0.017,0.0166,yes
+3.1,"Case 1 change in PUE, 2045–2074, BM",0.011,0.0108,yes
+3.1,"Case 1 change in PUE, 2045–2074, ECSF",0.011,0.0106,yes
+3.1,"Case 1 change in WUE, 2045–2074, WV",0.27,0.272,yes
+3.1,"Case 1 change in WUE, 2045–2074, KM",0.24,0.237,yes
+3.1,"Case 1 change in WUE, 2045–2074, CP",0.21,0.206,yes
+3.1,"Case 1 change in WUE, 2045–2074, BM",0.13,0.134,yes
+3.1,"Case 1 change in WUE, 2045–2074, ECSF",0.13,0.133,yes
+3.1,"Case 1 change in PUE, 2075–2100, WV",0.037,0.0369,yes
+3.1,"Case 1 change in PUE, 2075–2100, CP",0.025,0.0251,yes
+3.1,"Facility range of Case 1 change in PUE within WV, 2045–2074",0.014–0.023,0.0142–0.0229,yes
+3.1,"Case 2 change in PUE below 0.006 in every ecoregion, 2075–2100",< 0.006,max 0.0054 (WV),yes
+3.1,"Case 2 PUE change has the same ecoregion order as Case 1, 2045–2074",yes,Case 1 ECSF<BM<CP<KM<WV; Case 2 ECSF<BM<CP<KM<WV,yes
+3.1,"Case 2 PUE change has the same ecoregion order as Case 1, 2075–2100",yes,Case 1 BM<ECSF<CP<KM<WV; Case 2 ECSF<BM<CP<KM<WV,no
+3.1,Case 2 change in WUE below 0.01 L/kWh everywhere,< 0.01,ecoregion max 0.0046; facility max 0.0047,yes
+3.1,"Case 5 ecoregion change in PUE within 0.006–0.007, 2045–2074",0.006–0.007,0.0061–0.0074,yes
+3.1,"Case 5 ecoregion change in PUE within 0.010–0.012, 2075–2100",0.010–0.012,0.0098–0.0119,yes
+3.1,Case 5 change in WUE below 0.03 L/kWh everywhere,< 0.03,ecoregion max 0.0280; facility max 0.0286,yes
+3.2,Facility range of historical Case 1 PUE,1.125–1.139,1.1250–1.1391,yes
+3.2,"Facility range of Case 1 change in PUE, 2045–2074",0.011–0.023,0.0106–0.0229,yes
+3.3,"Case 1 monthly PUE change, WV Jul",0.060,0.0608,no
+3.3,"Case 1 monthly PUE change, WV Aug",0.066,0.0661,yes
+3.3,"Case 1 monthly PUE change, WV Oct",0.013,0.0122,no
+3.3,"Case 1 monthly PUE change, WV Nov",0.015,0.0146,yes
+3.3,"Case 1 monthly PUE change, CP Jun",0.043,0.0437,no
+3.3,"Case 1 monthly PUE change, CP Jul",0.032,0.0317,yes
+3.3,"Case 1 monthly PUE change, CP Sep",0.049,0.0502,no
+3.3,"Case 1 WUE peak, WV",Aug 0.82,Aug 0.832,no
+3.3,"Case 1 WUE peak, CP",Sep 0.63,Sep 0.642,no
+3.3,"Case 5 PUE peak, CP","Jul–Aug, about 0.011",Aug 0.0105,yes
+3.3,"Case 5 PUE peak, WV","Jul–Aug, about 0.011",Aug 0.0115,no
+3.3,"Case 2 monthly PUE change, WV Aug",0.011,0.0110,yes
+3.3,"Case 2 monthly PUE change, CP Aug",0.006,0.0059,yes
+3.4,"Facility range of change in annual mean Tmax, ECSF, BM, CP (°C)",2.7–2.8,2.64–2.80 (ECSF 2.76–2.76; BM 2.76–2.77; CP 2.64–2.80),no
+3.4,"Facility range of change in annual mean Tmax, KM, WV (°C)",2.3–2.5,2.25–2.52 (KM 2.41–2.41; WV 2.25–2.52),yes
+3.4,"Historical annual afternoon wet-bulb, WV facilities (°C)",10.7–11.7,10.68–11.66,yes
+3.4,"Historical annual afternoon wet-bulb, BM (°C)",8.1,8.07–8.09,yes
+3.4,"Historical annual afternoon wet-bulb, ECSF (°C)",6.8,6.78–6.78,yes
+3.4,No facility between 8.1 and 9.8 °C wet-bulb,none,0 facilities; gap 8.09–9.84,yes
+3.4,WV facility with smallest Case 1 PUE change has the lowest WV wet-bulb,yes (PUE change 0.014),"id 1365213539 (PTC), 44.7752 N 122.6159 W, cell 49_36 (1 facilities in cell); PUE change 0.0142; wet-bulb 10.68 (WV min 10.68, cell 49_36)",yes
+Methods,Distinct LOCA2 grid cells,22,22,yes
+Methods,Equipment parameters at Table B.1 midpoints,–,Case 1 29; Case 2 33; Case 5 30,yes

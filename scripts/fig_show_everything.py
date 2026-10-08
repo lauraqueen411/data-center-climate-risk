@@ -26,8 +26,8 @@ Inputs (all already on disk, nothing re-run):
   pressure, with the same functions the PUE/WUE model uses.
 
 Outputs:
-- ``docs/results-figures/fig_show_everything.{png,pdf}`` and
-  ``fig_show_everything_caption.txt``.
+- ``docs/results-figures/fig2_show_everything.{png,pdf}`` and
+  ``fig2_show_everything_caption.txt``.
 - ``outputs/ensemble_pue_wue_facilities/analysis/fig_show_everything/``:
   ``facility_changes.csv``, ``ecoregion_changes.csv``,
   ``model_agreement.csv``, ``model_values_cache.csv`` (per facility, model,
@@ -80,7 +80,11 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 from matplotlib.lines import Line2D
+from matplotlib.legend_handler import HandlerTuple
 from matplotlib.patches import Patch
+from matplotlib.transforms import ScaledTranslation
+
+from climate_risk_dc import figstyle
 
 # ---------------------------------------------------------------------------
 # Flags
@@ -120,23 +124,35 @@ ECOREGION_SHORT = {
     "Willamette Valley": "Willamette",
 }
 
-# Styling (task spec)
+ECOREGION_ABBR = {
+    "Eastern Cascades Slopes and Foothills": "ECSF",
+    "Blue Mountains": "BM",
+    "Columbia Plateau": "CP",
+    "Klamath Mountains/California High North Coast Range": "KM",
+    "Willamette Valley": "WV",
+}
+ECOREGION_CAPTION_NAME = {"Klamath Mountains/California High North Coast Range": "Klamath Mountains"}
+
+# Styling. Fonts, ink and frame come from climate_risk_dc.figstyle.
+DOT_COLOR = "period"  # "period" | "black"
 STRIP_OFFSET = 0.19
-STRIP_COLORS = {"midcentury": "#6da7ec", "endcentury": "#184f95"}
+STRIP_COLORS = {"midcentury": figstyle.BLUE, "endcentury": figstyle.VERMILLION}
+PERIOD_COLOR_NAME = {"midcentury": "blue", "endcentury": "vermillion"}
 BAR_WIDTH = 0.26
-BAR_ALPHA = 0.22
+BAR_ALPHA = 0.3
 JITTER = 0.075
 JITTER_SEED = 20261003
-MARKER_AREA = 12
-MEAN_HALF_WIDTH = 0.12
-MEAN_COLOR = "#1f1f1d"
-AXIS_COLOR = "#6b6a66"
-GRID_COLOR = "#e4e3df"
-FONT_SIZE = 7.5
-TICK_FONT_SIZE = 7
-# Condensed sans: five three-line ecoregion labels must fit under each
-# ~1.6 in panel at >= 7 pt; DejaVu Sans (matplotlib default) collides.
-FONT_FAMILY = ["Liberation Sans Narrow", "Nimbus Sans Narrow", "DejaVu Sans Condensed"]
+MARKER_AREA = 7
+MEAN_WIDTH = 1.0
+FIG_HEIGHT_IN = 7.3
+X_LABEL = "Increasing wet-bulb temperature \u2192"
+# At 10.5 pt X_LABEL is ~2.3 in wide against ~1.3 in panels, so it is drawn
+# once under panel (a) (wrapped) and once centered under the (e)-(g) row
+# (on the middle panel), not under each bottom panel.
+X_LABEL_WRAPPED = "Increasing wet-bulb\ntemperature \u2192"
+# "ECSF" and "BM" touch at 9 pt with ~0.26 in per ecoregion; the first tick
+# label is shifted left by this many points (it sits clear of the y-axis).
+FIRST_LABEL_NUDGE_PT = 4.0
 
 FNAME_RE = re.compile(
     r"facility_pue_wue_(?P<gcm>.+)_ssp370_(?P<archetype>ae-chiller|we-chiller|chiller-only)_"
@@ -358,7 +374,7 @@ def _summaries(changes: pd.DataFrame, fac_wb: pd.DataFrame, wb_col: str) -> tupl
 # ---------------------------------------------------------------------------
 
 PANELS = [
-    ("a", "Exceedance days (all designs)", "all", "exceedance_days"),
+    ("a", "Exceedance days", "all", "exceedance_days"),
     ("b", "PUE, Case 1", "Case 1", "pue"),
     ("c", "PUE, Case 2", "Case 2", "pue"),
     ("d", "PUE, Case 5", "Case 5", "pue"),
@@ -374,16 +390,16 @@ Y_LABELS = {
 
 
 def _style_axis(ax: plt.Axes) -> None:
-    ax.axhline(0, color=AXIS_COLOR, linewidth=0.8, zorder=0.5)
-    ax.grid(axis="y", color=GRID_COLOR, linewidth=0.6, zorder=0)
-    ax.grid(axis="x", visible=False)
-    ax.set_axisbelow(True)
-    for side in ("top", "right"):
-        ax.spines[side].set_visible(False)
-    for side in ("left", "bottom"):
-        ax.spines[side].set_color(AXIS_COLOR)
-        ax.spines[side].set_linewidth(0.8)
-    ax.tick_params(colors=AXIS_COLOR, labelcolor="#1f1f1d", labelsize=TICK_FONT_SIZE, width=0.8, length=3)
+    ax.axhline(0, color=figstyle.ZERO_LINE_COLOR, linewidth=figstyle.ZERO_LINE_WIDTH, zorder=0.5)
+    for spine in ax.spines.values():
+        spine.set_visible(True)
+        spine.set_color(figstyle.INK)
+        spine.set_linewidth(figstyle.SPINE_WIDTH)
+    ax.tick_params(direction="out", top=False, right=False)
+
+
+def _dot_color(period: str) -> str:
+    return STRIP_COLORS[period] if DOT_COLOR == "period" else "black"
 
 
 def _draw_panel(ax, facility, ecoregion, case, metric, order, rng) -> None:
@@ -394,26 +410,26 @@ def _draw_panel(ax, facility, ecoregion, case, metric, order, rng) -> None:
             row = ecoregion[(ecoregion["ecoregion"] == eco) & (ecoregion["case"] == case)
                             & (ecoregion["metric"] == metric) & (ecoregion["period"] == period)].iloc[0]
             lo, hi = row[BAND_COLUMNS[BAND][0]], row[BAND_COLUMNS[BAND][1]]
-            ax.bar(xc, hi - lo, bottom=lo, width=BAR_WIDTH, color=color, alpha=BAR_ALPHA, linewidth=0, zorder=1)
+            ax.bar(xc, hi - lo, bottom=lo, width=BAR_WIDTH, color=color, alpha=BAR_ALPHA, linewidth=0,
+                   edgecolor="none", zorder=1)
             pts = facility[(facility["ecoregion"] == eco) & (facility["case"] == case)
                            & (facility["metric"] == metric) & (facility["period"] == period)]["change"].to_numpy()
             jitter = rng.uniform(-JITTER, JITTER, size=pts.size)
-            ax.scatter(xc + jitter, pts, s=MARKER_AREA, color=color, edgecolors="white", linewidths=0.6, zorder=3)
-            ax.plot([xc - MEAN_HALF_WIDTH, xc + MEAN_HALF_WIDTH], [row["mean"]] * 2, color=MEAN_COLOR,
-                    linewidth=1.6, solid_capstyle="round", zorder=4)
+            ax.scatter(xc + jitter, pts, s=MARKER_AREA, color=_dot_color(period), alpha=1, linewidths=0,
+                       edgecolors="none", zorder=3)
+            ax.plot([xc - BAR_WIDTH / 2, xc + BAR_WIDTH / 2], [row["mean"]] * 2, color="black",
+                    linewidth=MEAN_WIDTH, solid_capstyle="butt", zorder=4)
 
 
-def plot(facility: pd.DataFrame, ecoregion: pd.DataFrame, order: list[str], fig_dir: Path) -> None:
-    plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": FONT_FAMILY, "font.size": FONT_SIZE, "axes.titlesize": FONT_SIZE, "axes.labelsize": FONT_SIZE,
-                         "legend.fontsize": FONT_SIZE, "pdf.fonttype": 42, "axes.labelcolor": "#1f1f1d"})
+def plot(facility: pd.DataFrame, ecoregion: pd.DataFrame, order: list[str], path: Path) -> None:
+    """Write ``path`` with .png and .pdf suffixes (or .png only for the black-dot variant)."""
+    figstyle.apply()
     rng = np.random.default_rng(JITTER_SEED)
-    meta = ecoregion.drop_duplicates("ecoregion").set_index("ecoregion")
-    tick_labels = [f"{ECOREGION_SHORT[e]}\n{meta.loc[e, 'wetbulb_c']:.1f} °C\nn = {meta.loc[e, 'n_facilities']}" for e in order]
 
-    fig = plt.figure(figsize=(7.5, 5.5))
-    outer = fig.add_gridspec(1, 2, width_ratios=[1.0, 3.17], wspace=0.24, left=0.058, right=0.997, top=0.955, bottom=0.165)
+    fig = plt.figure(figsize=(figstyle.FIG_WIDTH_IN, FIG_HEIGHT_IN))
+    outer = fig.add_gridspec(1, 2, width_ratios=[1.0, 3.17], wspace=0.30, left=0.105, right=0.985, top=0.965, bottom=0.145)
     ax_a = fig.add_subplot(outer[0, 0])
-    inner = outer[0, 1].subgridspec(2, 3, wspace=0.05, hspace=0.42)
+    inner = outer[0, 1].subgridspec(2, 3, wspace=0.20, hspace=0.28)
     axes = {"a": ax_a}
     for r, letters in enumerate(("bcd", "efg")):
         first = None
@@ -432,42 +448,49 @@ def plot(facility: pd.DataFrame, ecoregion: pd.DataFrame, order: list[str], fig_
         if letter in "bcd":
             ax.tick_params(axis="x", labelbottom=False)
         else:
-            ax.set_xticklabels(tick_labels, fontsize=TICK_FONT_SIZE, linespacing=1.15)
+            ax.set_xticklabels([ECOREGION_ABBR[e] for e in order])
+            first = ax.get_xticklabels()[0]
+            first.set_transform(first.get_transform() + ScaledTranslation(-FIRST_LABEL_NUDGE_PT / 72, 0, fig.dpi_scale_trans))
+            if letter == "a":
+                ax.set_xlabel(X_LABEL_WRAPPED)
+            elif letter == "f":
+                ax.set_xlabel(X_LABEL)
         if letter in "abe":
             ax.set_ylabel(Y_LABELS[metric])
         elif SHARE_Y_ROWS:
             ax.tick_params(axis="y", labelleft=False)
 
-    handles = [
-        Line2D([], [], linestyle="none", marker="o", markersize=4.5, markerfacecolor=STRIP_COLORS["midcentury"],
-               markeredgecolor="white", markeredgewidth=0.6),
-        Line2D([], [], linestyle="none", marker="o", markersize=4.5, markerfacecolor=STRIP_COLORS["endcentury"],
-               markeredgecolor="white", markeredgewidth=0.6),
-        Line2D([], [], color=MEAN_COLOR, linewidth=1.6, solid_capstyle="round"),
-        Patch(facecolor=AXIS_COLOR, alpha=BAR_ALPHA + 0.08, linewidth=0),
-    ]
-    labels = [PERIOD_LEGEND["midcentury"], PERIOD_LEGEND["endcentury"], "Ecoregion mean of facilities",
-              f"{BAND_LEGEND[BAND]} of ecoregion mean across {N_MODELS} models"]
-    fig.legend(handles, labels, loc="lower center", ncol=4, frameon=False, bbox_to_anchor=(0.5, 0.0),
-               handlelength=1.6, columnspacing=1.4, handletextpad=0.5)
+    def swatch(period: str) -> tuple:
+        band = Patch(facecolor=STRIP_COLORS[period], alpha=BAR_ALPHA, edgecolor="none", linewidth=0)
+        dot = Line2D([], [], linestyle="none", marker="o", markersize=np.sqrt(MARKER_AREA) * 1.4,
+                     markerfacecolor=_dot_color(period), markeredgewidth=0)
+        return (band, dot)
 
-    for ext in ("png", "pdf"):
-        fig.savefig(fig_dir / f"fig_show_everything.{ext}", dpi=300)
+    handles = [swatch("midcentury"), swatch("endcentury"),
+               Line2D([], [], color="black", linewidth=MEAN_WIDTH, solid_capstyle="butt")]
+    labels = [PERIOD_LEGEND["midcentury"], PERIOD_LEGEND["endcentury"], "Ecoregion mean"]
+    fig.legend(handles, labels, loc="lower center", ncol=3, frameon=False, bbox_to_anchor=(0.5, 0.0),
+               handler_map={tuple: HandlerTuple(ndivide=None, pad=0)}, handlelength=1.4, handleheight=1.0,
+               columnspacing=1.4, handletextpad=0.5)
+
+    for ext in (("png", "pdf") if DOT_COLOR == "period" else ("png",)):
+        fig.savefig(path.with_suffix(f".{ext}"), dpi=300)
     plt.close(fig)
 
 
-def caption() -> str:
+def caption(ecoregion: pd.DataFrame, order: list[str]) -> str:
+    meta = ecoregion.drop_duplicates("ecoregion").set_index("ecoregion")
+    names = [f"{ECOREGION_CAPTION_NAME.get(e, e)} ({ECOREGION_ABBR[e]}; n = {meta.loc[e, 'n_facilities']})" for e in order]
+    window = "annual mean" if WETBULB_WINDOW == "annual" else "May–October mean"
     return (
-        "Projected change in (a) annual number of threshold-exceedance days, (b–d) power usage effectiveness "
-        "(PUE), and (e–g) water usage effectiveness (WUE, L/kWh) for cooling-system Cases 1, 2, and 5. Changes "
-        "are between the historical period (1985–2014) and mid-century (2045–2074; light blue) or "
-        "end-of-century (2075–2100; dark blue). PUE and WUE are annual means of daily values. Ecoregions are "
-        "ordered by historical "
-        + ("annual mean" if WETBULB_WINDOW == "annual" else "May–October mean")
-        + " afternoon wet-bulb temperature, shown below each name with the number of data centers (n). Points are "
-        f"facilities (mean of {N_MODELS} climate models), jittered horizontally; facilities within the same LOCA2 "
-        "grid cell have identical values. Black lines are ecoregion means, and shaded bars are "
-        f"{BAND_CAPTION[BAND]} of the ecoregion mean across the {N_MODELS} models."
+        "Projected change in (a) annual number of threshold-exceedance days, (b–d) annual mean power usage "
+        "effectiveness (PUE), and (e–g) annual mean water usage effectiveness (WUE, L/kWh) for cooling-system "
+        "Cases 1, 2, and 5. Changes are between the historical period (1985–2014) and mid-century (2045–2074; "
+        f"{PERIOD_COLOR_NAME['midcentury']}) or end-of-century (2075–2100; {PERIOD_COLOR_NAME['endcentury']}). "
+        f"Ecoregions are ordered from left to right by historical {window} afternoon wet-bulb temperature: "
+        + ", ".join(names[:-1]) + f", and {names[-1]}. Points are facilities (mean of {N_MODELS} climate models), "
+        "jittered horizontally; facilities within the same LOCA2 grid cell have identical values. Black lines are "
+        f"ecoregion means, and shaded bars are {BAND_CAPTION[BAND]} of the ecoregion mean across the {N_MODELS} models."
     )
 
 
@@ -567,8 +590,11 @@ def run(args: argparse.Namespace) -> None:
         out_dir / "ecoregion_changes.csv", index=False)
     facilities.drop(columns="pressure_pa").to_csv(out_dir / "facility_grid_cells.csv", index=False)
 
-    plot(facility, ecoregion, order, fig_dir)
-    (fig_dir / "fig_show_everything_caption.txt").write_text(caption() + "\n")
+    global DOT_COLOR
+    for dot_color, name in (("period", "fig2_show_everything"), ("black", "fig2_show_everything_blackdots")):
+        DOT_COLOR = dot_color
+        plot(facility, ecoregion, order, fig_dir / name)
+    (fig_dir / "fig2_show_everything_caption.txt").write_text(caption(ecoregion, order) + "\n")
 
     pd.DataFrame([{
         "band": BAND, "wetbulb_window": WETBULB_WINDOW, "share_y_rows": SHARE_Y_ROWS, "n_models": N_MODELS,
@@ -578,8 +604,8 @@ def run(args: argparse.Namespace) -> None:
     }]).to_csv(out_dir / "run_manifest.csv", index=False)
 
     report(values, changes, facility, ecoregion, per_model, fac_wb, order, out_dir)
-    print(f"\nCaption:\n{caption()}")
-    print(f"\nWrote {fig_dir / 'fig_show_everything.png'} (+ .pdf) and CSVs under {out_dir}")
+    print(f"\nCaption:\n{caption(ecoregion, order)}")
+    print(f"\nWrote {fig_dir / 'fig2_show_everything.png'} (+ .pdf) and CSVs under {out_dir}")
 
 
 def parse_args() -> argparse.Namespace:

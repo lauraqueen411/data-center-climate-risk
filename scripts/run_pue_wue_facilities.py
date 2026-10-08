@@ -217,7 +217,12 @@ def run(args: argparse.Namespace) -> None:
     )
 
     archetypes = _archetypes_for_backend(args.backend)
-    print(f"Backend: {args.backend}")
+    if args.archetypes:
+        unknown = set(args.archetypes) - set(archetypes)
+        if unknown:
+            raise ValueError(f"Unknown archetype(s) {sorted(unknown)}; choose from {sorted(archetypes)}")
+        archetypes = {k: v for k, v in archetypes.items() if k in args.archetypes}
+    print(f"Backend: {args.backend}; archetypes: {', '.join(archetypes)}")
 
     for gcm in args.gcms:
         member = resolve_gcm_member(manifest, gcm)
@@ -243,6 +248,12 @@ def parse_args() -> argparse.Namespace:
         "within ~0.1-0.35%% PUE / ~0.03 L/kWh WUE). 'coolprop' = the original reference-repo psychrometrics -- "
         "confirmed impractically slow at this scale (HAPropsSI's array support degrades badly, worse than "
         "linear, above ~100K-point arrays), kept only for point comparisons, not full runs.",
+    )
+    parser.add_argument(
+        "--archetypes",
+        nargs="+",
+        default=None,
+        help="Subset of archetypes to run (ae-chiller, we-chiller, chiller-only); default all three.",
     )
     parser.add_argument("--repo-root", default=".", help="Repository root path (default: current directory)")
     parser.add_argument(
