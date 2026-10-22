@@ -1,0 +1,1117 @@
+file,row,column,draft3,recomputed,match
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,n_facilities,1,1,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,hist_exceedance_days,1.3,1.3,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,hist_wetbulb_C,6.8,6.8,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,hist_pue,1.125,1.125,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,hist_wue,0.07,0.07,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_exceedance,15.3,15.3,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_exceedance_p25,11.3,11.3,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_exceedance_p75,15.4,15.4,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_pue,0.0093,0.0093,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_pue_p25,0.0075,0.0075,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_pue_p75,0.0098,0.0098,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_wue,0.12,0.12,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_wue_p25,0.094,0.094,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2045–2074,d_wue_p75,0.12,0.12,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,n_facilities,1,1,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,hist_exceedance_days,1.3,1.3,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,hist_wetbulb_C,6.8,6.8,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,hist_pue,1.125,1.125,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,hist_wue,0.07,0.07,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_exceedance,33.1,33.1,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_exceedance_p25,25.3,25.3,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_exceedance_p75,40.6,40.6,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_pue,0.015,0.015,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_pue_p25,0.013,0.013,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_pue_p75,0.018,0.018,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_wue,0.19,0.19,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_wue_p25,0.16,0.16,True
+table1.csv,Eastern Cascades Slopes and Foothills | 2075–2100,d_wue_p75,0.23,0.23,True
+table1.csv,Blue Mountains | 2045–2074,n_facilities,13,13,True
+table1.csv,Blue Mountains | 2045–2074,hist_exceedance_days,7.8,7.8,True
+table1.csv,Blue Mountains | 2045–2074,hist_wetbulb_C,8.1,8.1,True
+table1.csv,Blue Mountains | 2045–2074,hist_pue,1.128,1.128,True
+table1.csv,Blue Mountains | 2045–2074,hist_wue,0.12,0.12,True
+table1.csv,Blue Mountains | 2045–2074,d_exceedance,24.5,24.5,True
+table1.csv,Blue Mountains | 2045–2074,d_exceedance_p25,18.6,18.6,True
+table1.csv,Blue Mountains | 2045–2074,d_exceedance_p75,27.6,27.6,True
+table1.csv,Blue Mountains | 2045–2074,d_pue,0.0100,0.0100,True
+table1.csv,Blue Mountains | 2045–2074,d_pue_p25,0.0082,0.0082,True
+table1.csv,Blue Mountains | 2045–2074,d_pue_p75,0.011,0.011,True
+table1.csv,Blue Mountains | 2045–2074,d_wue,0.12,0.12,True
+table1.csv,Blue Mountains | 2045–2074,d_wue_p25,0.10,0.10,True
+table1.csv,Blue Mountains | 2045–2074,d_wue_p75,0.14,0.14,True
+table1.csv,Blue Mountains | 2075–2100,n_facilities,13,13,True
+table1.csv,Blue Mountains | 2075–2100,hist_exceedance_days,7.8,7.8,True
+table1.csv,Blue Mountains | 2075–2100,hist_wetbulb_C,8.1,8.1,True
+table1.csv,Blue Mountains | 2075–2100,hist_pue,1.128,1.128,True
+table1.csv,Blue Mountains | 2075–2100,hist_wue,0.12,0.12,True
+table1.csv,Blue Mountains | 2075–2100,d_exceedance,42.1,42.1,True
+table1.csv,Blue Mountains | 2075–2100,d_exceedance_p25,32.6,32.6,True
+table1.csv,Blue Mountains | 2075–2100,d_exceedance_p75,53.4,53.4,True
+table1.csv,Blue Mountains | 2075–2100,d_pue,0.016,0.016,True
+table1.csv,Blue Mountains | 2075–2100,d_pue_p25,0.013,0.013,True
+table1.csv,Blue Mountains | 2075–2100,d_pue_p75,0.019,0.019,True
+table1.csv,Blue Mountains | 2075–2100,d_wue,0.20,0.20,True
+table1.csv,Blue Mountains | 2075–2100,d_wue_p25,0.16,0.16,True
+table1.csv,Blue Mountains | 2075–2100,d_wue_p75,0.23,0.23,True
+table1.csv,Columbia Plateau | 2045–2074,n_facilities,61,61,True
+table1.csv,Columbia Plateau | 2045–2074,hist_exceedance_days,19.2,19.2,True
+table1.csv,Columbia Plateau | 2045–2074,hist_wetbulb_C,10.2,10.2,True
+table1.csv,Columbia Plateau | 2045–2074,hist_pue,1.132,1.132,True
+table1.csv,Columbia Plateau | 2045–2074,hist_wue,0.23,0.23,True
+table1.csv,Columbia Plateau | 2045–2074,d_exceedance,30.4,30.4,True
+table1.csv,Columbia Plateau | 2045–2074,d_exceedance_p25,24.9,24.9,True
+table1.csv,Columbia Plateau | 2045–2074,d_exceedance_p75,34.3,34.3,True
+table1.csv,Columbia Plateau | 2045–2074,d_pue,0.013,0.013,True
+table1.csv,Columbia Plateau | 2045–2074,d_pue_p25,0.010,0.010,True
+table1.csv,Columbia Plateau | 2045–2074,d_pue_p75,0.015,0.015,True
+table1.csv,Columbia Plateau | 2045–2074,d_wue,0.16,0.16,True
+table1.csv,Columbia Plateau | 2045–2074,d_wue_p25,0.13,0.13,True
+table1.csv,Columbia Plateau | 2045–2074,d_wue_p75,0.18,0.18,True
+table1.csv,Columbia Plateau | 2075–2100,n_facilities,61,61,True
+table1.csv,Columbia Plateau | 2075–2100,hist_exceedance_days,19.2,19.2,True
+table1.csv,Columbia Plateau | 2075–2100,hist_wetbulb_C,10.2,10.2,True
+table1.csv,Columbia Plateau | 2075–2100,hist_pue,1.132,1.132,True
+table1.csv,Columbia Plateau | 2075–2100,hist_wue,0.23,0.23,True
+table1.csv,Columbia Plateau | 2075–2100,d_exceedance,48.9,48.9,True
+table1.csv,Columbia Plateau | 2075–2100,d_exceedance_p25,39.9,39.9,True
+table1.csv,Columbia Plateau | 2075–2100,d_exceedance_p75,59.6,59.6,True
+table1.csv,Columbia Plateau | 2075–2100,d_pue,0.019,0.019,True
+table1.csv,Columbia Plateau | 2075–2100,d_pue_p25,0.016,0.016,True
+table1.csv,Columbia Plateau | 2075–2100,d_pue_p75,0.021,0.021,True
+table1.csv,Columbia Plateau | 2075–2100,d_wue,0.23,0.23,True
+table1.csv,Columbia Plateau | 2075–2100,d_wue_p25,0.19,0.19,True
+table1.csv,Columbia Plateau | 2075–2100,d_wue_p75,0.26,0.26,True
+table1.csv,Klamath Mountains | 2045–2074,n_facilities,1,1,True
+table1.csv,Klamath Mountains | 2045–2074,hist_exceedance_days,17.6,17.6,True
+table1.csv,Klamath Mountains | 2045–2074,hist_wetbulb_C,11.2,11.2,True
+table1.csv,Klamath Mountains | 2045–2074,hist_pue,1.131,1.131,True
+table1.csv,Klamath Mountains | 2045–2074,hist_wue,0.19,0.19,True
+table1.csv,Klamath Mountains | 2045–2074,d_exceedance,26.0,26.0,True
+table1.csv,Klamath Mountains | 2045–2074,d_exceedance_p25,21.4,21.4,True
+table1.csv,Klamath Mountains | 2045–2074,d_exceedance_p75,30.1,30.1,True
+table1.csv,Klamath Mountains | 2045–2074,d_pue,0.012,0.012,True
+table1.csv,Klamath Mountains | 2045–2074,d_pue_p25,0.0097,0.0097,True
+table1.csv,Klamath Mountains | 2045–2074,d_pue_p75,0.013,0.013,True
+table1.csv,Klamath Mountains | 2045–2074,d_wue,0.14,0.14,True
+table1.csv,Klamath Mountains | 2045–2074,d_wue_p25,0.12,0.12,True
+table1.csv,Klamath Mountains | 2045–2074,d_wue_p75,0.15,0.15,True
+table1.csv,Klamath Mountains | 2075–2100,n_facilities,1,1,True
+table1.csv,Klamath Mountains | 2075–2100,hist_exceedance_days,17.6,17.6,True
+table1.csv,Klamath Mountains | 2075–2100,hist_wetbulb_C,11.2,11.2,True
+table1.csv,Klamath Mountains | 2075–2100,hist_pue,1.131,1.131,True
+table1.csv,Klamath Mountains | 2075–2100,hist_wue,0.19,0.19,True
+table1.csv,Klamath Mountains | 2075–2100,d_exceedance,44.5,44.5,True
+table1.csv,Klamath Mountains | 2075–2100,d_exceedance_p25,37.3,37.3,True
+table1.csv,Klamath Mountains | 2075–2100,d_exceedance_p75,51.8,51.8,True
+table1.csv,Klamath Mountains | 2075–2100,d_pue,0.019,0.019,True
+table1.csv,Klamath Mountains | 2075–2100,d_pue_p25,0.016,0.016,True
+table1.csv,Klamath Mountains | 2075–2100,d_pue_p75,0.022,0.022,True
+table1.csv,Klamath Mountains | 2075–2100,d_wue,0.23,0.23,True
+table1.csv,Klamath Mountains | 2075–2100,d_wue_p25,0.19,0.19,True
+table1.csv,Klamath Mountains | 2075–2100,d_wue_p75,0.26,0.26,True
+table1.csv,Willamette Valley | 2045–2074,n_facilities,33,33,True
+table1.csv,Willamette Valley | 2045–2074,hist_exceedance_days,4.1,4.1,True
+table1.csv,Willamette Valley | 2045–2074,hist_wetbulb_C,11.5,11.5,True
+table1.csv,Willamette Valley | 2045–2074,hist_pue,1.123,1.123,True
+table1.csv,Willamette Valley | 2045–2074,hist_wue,0.11,0.11,True
+table1.csv,Willamette Valley | 2045–2074,d_exceedance,10.9,10.9,True
+table1.csv,Willamette Valley | 2045–2074,d_exceedance_p25,8.8,8.8,True
+table1.csv,Willamette Valley | 2045–2074,d_exceedance_p75,11.8,11.8,True
+table1.csv,Willamette Valley | 2045–2074,d_pue,0.015,0.015,True
+table1.csv,Willamette Valley | 2045–2074,d_pue_p25,0.012,0.012,True
+table1.csv,Willamette Valley | 2045–2074,d_pue_p75,0.017,0.017,True
+table1.csv,Willamette Valley | 2045–2074,d_wue,0.19,0.19,True
+table1.csv,Willamette Valley | 2045–2074,d_wue_p25,0.15,0.15,True
+table1.csv,Willamette Valley | 2045–2074,d_wue_p75,0.22,0.22,True
+table1.csv,Willamette Valley | 2075–2100,n_facilities,33,33,True
+table1.csv,Willamette Valley | 2075–2100,hist_exceedance_days,4.1,4.1,True
+table1.csv,Willamette Valley | 2075–2100,hist_wetbulb_C,11.5,11.5,True
+table1.csv,Willamette Valley | 2075–2100,hist_pue,1.123,1.123,True
+table1.csv,Willamette Valley | 2075–2100,hist_wue,0.11,0.11,True
+table1.csv,Willamette Valley | 2075–2100,d_exceedance,22.5,22.5,True
+table1.csv,Willamette Valley | 2075–2100,d_exceedance_p25,17.0,17.0,True
+table1.csv,Willamette Valley | 2075–2100,d_exceedance_p75,28.7,28.7,True
+table1.csv,Willamette Valley | 2075–2100,d_pue,0.026,0.026,True
+table1.csv,Willamette Valley | 2075–2100,d_pue_p25,0.021,0.021,True
+table1.csv,Willamette Valley | 2075–2100,d_pue_p75,0.029,0.029,True
+table1.csv,Willamette Valley | 2075–2100,d_wue,0.32,0.32,True
+table1.csv,Willamette Valley | 2075–2100,d_wue_p25,0.26,0.26,True
+table1.csv,Willamette Valley | 2075–2100,d_wue_p75,0.36,0.36,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,n_facilities,1,1,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_pue,1.141,1.141,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_wue,2.07,2.07,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_pue_p25,1.141,1.141,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_pue_p75,1.141,1.141,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_wue_p25,2.07,2.07,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_wue_p75,2.07,2.07,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,d_pue,0.0001,0.0001,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,d_pue_p25,0.0001,0.0001,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,d_pue_p75,0.0001,0.0001,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,d_wue,0.003,0.003,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,d_wue_p25,0.002,0.002,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2045–2074,d_wue_p75,0.003,0.003,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,n_facilities,1,1,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_pue,1.141,1.141,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_wue,2.07,2.07,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_pue_p25,1.141,1.141,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_pue_p75,1.141,1.141,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_wue_p25,2.07,2.07,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_wue_p75,2.07,2.07,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,d_pue,0.0002,0.0002,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,d_pue_p25,0.0001,0.0001,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,d_pue_p75,0.0002,0.0002,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,d_wue,0.005,0.005,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,d_wue_p25,0.004,0.004,True
+table_cases25.csv,Case 2 | Eastern Cascades Slopes and Foothills | 2075–2100,d_wue_p75,0.005,0.005,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,n_facilities,13,13,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,hist_pue,1.140,1.140,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,hist_wue,2.07,2.07,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,hist_pue_p25,1.140,1.140,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,hist_pue_p75,1.140,1.140,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,hist_wue_p25,2.07,2.07,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,hist_wue_p75,2.07,2.07,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,d_pue,0.0002,0.0002,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,d_pue_p25,0.0001,0.0001,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,d_pue_p75,0.0002,0.0002,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,d_wue,0.003,0.003,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,d_wue_p25,0.002,0.002,True
+table_cases25.csv,Case 2 | Blue Mountains | 2045–2074,d_wue_p75,0.003,0.003,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,n_facilities,13,13,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,hist_pue,1.140,1.140,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,hist_wue,2.07,2.07,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,hist_pue_p25,1.140,1.140,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,hist_pue_p75,1.140,1.140,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,hist_wue_p25,2.07,2.07,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,hist_wue_p75,2.07,2.07,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,d_pue,0.0006,0.0006,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,d_pue_p25,0.0003,0.0003,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,d_pue_p75,0.0007,0.0007,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,d_wue,0.005,0.005,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,d_wue_p25,0.004,0.004,True
+table_cases25.csv,Case 2 | Blue Mountains | 2075–2100,d_wue_p75,0.006,0.006,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,n_facilities,61,61,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,hist_pue,1.135,1.135,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,hist_wue,2.08,2.08,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,hist_pue_p25,1.135,1.135,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,hist_pue_p75,1.135,1.135,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,hist_wue_p25,2.08,2.08,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,hist_wue_p75,2.08,2.08,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,d_pue,0.0013,0.0013,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,d_pue_p25,0.0009,0.0009,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,d_pue_p75,0.0015,0.0015,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,d_wue,0.003,0.003,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,d_wue_p25,0.002,0.002,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2045–2074,d_wue_p75,0.003,0.003,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,n_facilities,61,61,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,hist_pue,1.135,1.135,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,hist_wue,2.08,2.08,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,hist_pue_p25,1.135,1.135,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,hist_pue_p75,1.135,1.135,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,hist_wue_p25,2.08,2.08,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,hist_wue_p75,2.08,2.08,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,d_pue,0.0032,0.0032,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,d_pue_p25,0.0022,0.0022,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,d_pue_p75,0.0039,0.0039,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,d_wue,0.005,0.005,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,d_wue_p25,0.004,0.004,True
+table_cases25.csv,Case 2 | Columbia Plateau | 2075–2100,d_wue_p75,0.005,0.005,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,n_facilities,1,1,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,hist_pue,1.137,1.137,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,hist_wue,2.08,2.08,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,hist_pue_p25,1.137,1.137,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,hist_pue_p75,1.137,1.137,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,hist_wue_p25,2.08,2.08,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,hist_wue_p75,2.08,2.08,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,d_pue,0.0016,0.0016,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,d_pue_p25,0.0011,0.0011,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,d_pue_p75,0.0018,0.0018,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,d_wue,0.003,0.003,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,d_wue_p25,0.002,0.002,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2045–2074,d_wue_p75,0.003,0.003,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,n_facilities,1,1,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,hist_pue,1.137,1.137,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,hist_wue,2.08,2.08,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,hist_pue_p25,1.137,1.137,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,hist_pue_p75,1.137,1.137,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,hist_wue_p25,2.08,2.08,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,hist_wue_p75,2.08,2.08,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,d_pue,0.0037,0.0037,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,d_pue_p25,0.0026,0.0026,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,d_pue_p75,0.0044,0.0044,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,d_wue,0.004,0.004,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,d_wue_p25,0.004,0.004,True
+table_cases25.csv,Case 2 | Klamath Mountains | 2075–2100,d_wue_p75,0.005,0.005,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,n_facilities,33,33,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,hist_pue,1.136,1.136,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,hist_wue,2.08,2.08,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,hist_pue_p25,1.136,1.136,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,hist_pue_p75,1.136,1.136,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,hist_wue_p25,2.08,2.08,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,hist_wue_p75,2.08,2.08,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,d_pue,0.0025,0.0025,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,d_pue_p25,0.0019,0.0019,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,d_pue_p75,0.0027,0.0027,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,d_wue,0.003,0.003,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,d_wue_p25,0.002,0.002,True
+table_cases25.csv,Case 2 | Willamette Valley | 2045–2074,d_wue_p75,0.003,0.003,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,n_facilities,33,33,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,hist_pue,1.136,1.136,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,hist_wue,2.08,2.08,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,hist_pue_p25,1.136,1.136,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,hist_pue_p75,1.136,1.136,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,hist_wue_p25,2.08,2.08,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,hist_wue_p75,2.08,2.08,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,d_pue,0.0054,0.0054,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,d_pue_p25,0.0041,0.0041,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,d_pue_p75,0.0063,0.0063,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,d_wue,0.005,0.005,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,d_wue_p25,0.004,0.004,True
+table_cases25.csv,Case 2 | Willamette Valley | 2075–2100,d_wue_p75,0.005,0.005,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,n_facilities,1,1,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_pue,1.653,1.653,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_wue,2.86,2.86,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_pue_p25,1.653,1.653,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_pue_p75,1.653,1.653,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_wue_p25,2.86,2.86,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,hist_wue_p75,2.86,2.86,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,d_pue,0.0061,0.0061,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,d_pue_p25,0.0050,0.0050,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,d_pue_p75,0.0070,0.0070,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,d_wue,0.015,0.015,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,d_wue_p25,0.012,0.012,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2045–2074,d_wue_p75,0.017,0.017,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,n_facilities,1,1,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_pue,1.653,1.653,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_wue,2.86,2.86,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_pue_p25,1.653,1.653,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_pue_p75,1.653,1.653,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_wue_p25,2.86,2.86,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,hist_wue_p75,2.86,2.86,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,d_pue,0.0098,0.0098,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,d_pue_p25,0.0080,0.0080,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,d_pue_p75,0.012,0.012,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,d_wue,0.024,0.024,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,d_wue_p25,0.019,0.019,True
+table_cases25.csv,Case 5 | Eastern Cascades Slopes and Foothills | 2075–2100,d_wue_p75,0.029,0.029,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,n_facilities,13,13,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,hist_pue,1.651,1.651,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,hist_wue,2.87,2.87,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,hist_pue_p25,1.651,1.651,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,hist_pue_p75,1.652,1.652,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,hist_wue_p25,2.87,2.87,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,hist_wue_p75,2.87,2.87,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,d_pue,0.0064,0.0064,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,d_pue_p25,0.0052,0.0052,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,d_pue_p75,0.0075,0.0075,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,d_wue,0.015,0.015,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,d_wue_p25,0.013,0.013,True
+table_cases25.csv,Case 5 | Blue Mountains | 2045–2074,d_wue_p75,0.018,0.018,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,n_facilities,13,13,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,hist_pue,1.651,1.651,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,hist_wue,2.87,2.87,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,hist_pue_p25,1.651,1.651,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,hist_pue_p75,1.652,1.652,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,hist_wue_p25,2.87,2.87,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,hist_wue_p75,2.87,2.87,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,d_pue,0.010,0.010,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,d_pue_p25,0.0083,0.0083,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,d_pue_p75,0.013,0.013,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,d_wue,0.025,0.025,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,d_wue_p25,0.020,0.020,True
+table_cases25.csv,Case 5 | Blue Mountains | 2075–2100,d_wue_p75,0.030,0.030,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,n_facilities,61,61,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,hist_pue,1.646,1.646,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,hist_wue,2.90,2.90,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,hist_pue_p25,1.646,1.646,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,hist_pue_p75,1.647,1.647,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,hist_wue_p25,2.90,2.90,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,hist_wue_p75,2.90,2.90,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,d_pue,0.0070,0.0070,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,d_pue_p25,0.0057,0.0057,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,d_pue_p75,0.0081,0.0081,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,d_wue,0.016,0.016,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,d_wue_p25,0.013,0.013,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2045–2074,d_wue_p75,0.019,0.019,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,n_facilities,61,61,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,hist_pue,1.646,1.646,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,hist_wue,2.90,2.90,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,hist_pue_p25,1.646,1.646,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,hist_pue_p75,1.647,1.647,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,hist_wue_p25,2.90,2.90,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,hist_wue_p75,2.90,2.90,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,d_pue,0.011,0.011,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,d_pue_p25,0.0093,0.0093,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,d_pue_p75,0.014,0.014,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,d_wue,0.027,0.027,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,d_wue_p25,0.022,0.022,True
+table_cases25.csv,Case 5 | Columbia Plateau | 2075–2100,d_wue_p75,0.032,0.032,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,n_facilities,1,1,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,hist_pue,1.653,1.653,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,hist_wue,2.90,2.90,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,hist_pue_p25,1.653,1.653,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,hist_pue_p75,1.654,1.654,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,hist_wue_p25,2.90,2.90,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,hist_wue_p75,2.90,2.90,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,d_pue,0.0070,0.0070,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,d_pue_p25,0.0056,0.0056,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,d_pue_p75,0.0078,0.0078,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,d_wue,0.016,0.016,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,d_wue_p25,0.013,0.013,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2045–2074,d_wue_p75,0.018,0.018,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,n_facilities,1,1,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,hist_pue,1.653,1.653,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,hist_wue,2.90,2.90,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,hist_pue_p25,1.653,1.653,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,hist_pue_p75,1.654,1.654,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,hist_wue_p25,2.90,2.90,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,hist_wue_p75,2.90,2.90,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,d_pue,0.011,0.011,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,d_pue_p25,0.0093,0.0093,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,d_pue_p75,0.014,0.014,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,d_wue,0.027,0.027,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,d_wue_p25,0.022,0.022,True
+table_cases25.csv,Case 5 | Klamath Mountains | 2075–2100,d_wue_p75,0.032,0.032,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,n_facilities,33,33,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,hist_pue,1.648,1.648,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,hist_wue,2.91,2.91,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,hist_pue_p25,1.648,1.648,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,hist_pue_p75,1.649,1.649,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,hist_wue_p25,2.91,2.91,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,hist_wue_p75,2.91,2.91,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,d_pue,0.0074,0.0074,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,d_pue_p25,0.0061,0.0061,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,d_pue_p75,0.0083,0.0083,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,d_wue,0.017,0.017,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,d_wue_p25,0.014,0.014,True
+table_cases25.csv,Case 5 | Willamette Valley | 2045–2074,d_wue_p75,0.019,0.019,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,n_facilities,33,33,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,hist_pue,1.648,1.648,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,hist_wue,2.91,2.91,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,hist_pue_p25,1.648,1.648,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,hist_pue_p75,1.649,1.649,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,hist_wue_p25,2.91,2.91,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,hist_wue_p75,2.91,2.91,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,d_pue,0.012,0.012,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,d_pue_p25,0.010,0.010,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,d_pue_p75,0.014,0.014,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,d_wue,0.028,0.028,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,d_wue_p25,0.024,0.024,True
+table_cases25.csv,Case 5 | Willamette Valley | 2075–2100,d_wue_p75,0.033,0.033,True
+warming.csv,ECSF | 2045–2074,mean,2.8,2.8,True
+warming.csv,ECSF | 2045–2074,p25,2.2,2.2,True
+warming.csv,ECSF | 2045–2074,p75,3.0,3.0,True
+warming.csv,ECSF | 2045–2074,facility_min,2.8,2.8,True
+warming.csv,ECSF | 2045–2074,facility_max,2.8,2.8,True
+warming.csv,BM | 2045–2074,mean,2.8,2.8,True
+warming.csv,BM | 2045–2074,p25,2.2,2.2,True
+warming.csv,BM | 2045–2074,p75,3.0,3.0,True
+warming.csv,BM | 2045–2074,facility_min,2.8,2.8,True
+warming.csv,BM | 2045–2074,facility_max,2.8,2.8,True
+warming.csv,CP | 2045–2074,mean,2.7,2.7,True
+warming.csv,CP | 2045–2074,p25,2.2,2.2,True
+warming.csv,CP | 2045–2074,p75,3.1,3.1,True
+warming.csv,CP | 2045–2074,facility_min,2.6,2.6,True
+warming.csv,CP | 2045–2074,facility_max,2.8,2.8,True
+warming.csv,KM | 2045–2074,mean,2.4,2.4,True
+warming.csv,KM | 2045–2074,p25,2.1,2.1,True
+warming.csv,KM | 2045–2074,p75,2.7,2.7,True
+warming.csv,KM | 2045–2074,facility_min,2.4,2.4,True
+warming.csv,KM | 2045–2074,facility_max,2.4,2.4,True
+warming.csv,WV | 2045–2074,mean,2.5,2.5,True
+warming.csv,WV | 2045–2074,p25,2.0,2.0,True
+warming.csv,WV | 2045–2074,p75,2.8,2.8,True
+warming.csv,WV | 2045–2074,facility_min,2.3,2.3,True
+warming.csv,WV | 2045–2074,facility_max,2.5,2.5,True
+warming.csv,ECSF | 2075–2100,mean,4.3,4.3,True
+warming.csv,ECSF | 2075–2100,p25,3.4,3.4,True
+warming.csv,ECSF | 2075–2100,p75,5.1,5.1,True
+warming.csv,ECSF | 2075–2100,facility_min,4.3,4.3,True
+warming.csv,ECSF | 2075–2100,facility_max,4.3,4.3,True
+warming.csv,BM | 2075–2100,mean,4.2,4.2,True
+warming.csv,BM | 2075–2100,p25,3.4,3.4,True
+warming.csv,BM | 2075–2100,p75,5.1,5.1,True
+warming.csv,BM | 2075–2100,facility_min,4.2,4.2,True
+warming.csv,BM | 2075–2100,facility_max,4.2,4.2,True
+warming.csv,CP | 2075–2100,mean,4.1,4.1,True
+warming.csv,CP | 2075–2100,p25,3.3,3.3,True
+warming.csv,CP | 2075–2100,p75,4.8,4.8,True
+warming.csv,CP | 2075–2100,facility_min,4.1,4.1,True
+warming.csv,CP | 2075–2100,facility_max,4.3,4.3,True
+warming.csv,KM | 2075–2100,mean,3.8,3.8,True
+warming.csv,KM | 2075–2100,p25,3.1,3.1,True
+warming.csv,KM | 2075–2100,p75,4.5,4.5,True
+warming.csv,KM | 2075–2100,facility_min,3.8,3.8,True
+warming.csv,KM | 2075–2100,facility_max,3.8,3.8,True
+warming.csv,WV | 2075–2100,mean,3.8,3.8,True
+warming.csv,WV | 2075–2100,p25,3.1,3.1,True
+warming.csv,WV | 2075–2100,p75,4.3,4.3,True
+warming.csv,WV | 2075–2100,facility_min,3.5,3.5,True
+warming.csv,WV | 2075–2100,facility_max,3.9,3.9,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 1 | Jan,mean,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 1 | Jan,p25,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 1 | Jan,p75,0.0002,0.0002,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 2 | Feb,mean,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 2 | Feb,p25,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 2 | Feb,p75,0.0002,0.0002,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 3 | Mar,mean,0.0002,0.0002,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 3 | Mar,p25,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 3 | Mar,p75,0.0002,0.0002,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 4 | Apr,mean,0.0010,0.0010,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 4 | Apr,p25,0.0003,0.0003,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 4 | Apr,p75,0.0013,0.0013,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 5 | May,mean,0.011,0.011,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 5 | May,p25,0.0074,0.0074,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 5 | May,p75,0.013,0.013,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 6 | Jun,mean,0.033,0.033,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 6 | Jun,p25,0.024,0.024,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 6 | Jun,p75,0.038,0.038,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 7 | Jul,mean,0.028,0.028,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 7 | Jul,p25,0.024,0.024,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 7 | Jul,p75,0.031,0.031,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 8 | Aug,mean,0.033,0.033,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 8 | Aug,p25,0.029,0.029,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 8 | Aug,p75,0.039,0.039,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 9 | Sep,mean,0.040,0.040,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 9 | Sep,p25,0.032,0.032,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 9 | Sep,p75,0.044,0.044,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 10 | Oct,mean,0.0055,0.0055,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 10 | Oct,p25,0.0035,0.0035,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 10 | Oct,p75,0.0060,0.0060,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 11 | Nov,mean,0.0005,0.0005,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 11 | Nov,p25,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 11 | Nov,p75,0.0007,0.0007,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 12 | Dec,mean,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 12 | Dec,p25,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 1 | 12 | Dec,p75,0.0001,0.0001,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 1 | Jan,mean,-0.001,-0.001,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 1 | Jan,p25,-0.002,-0.002,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 1 | Jan,p75,-0.000,-0.000,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 2 | Feb,mean,-0.000,-0.000,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 2 | Feb,p25,-0.001,-0.001,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 2 | Feb,p75,0.000,0.000,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 3 | Mar,mean,0.000,0.000,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 3 | Mar,p25,-0.000,-0.000,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 3 | Mar,p75,0.001,0.001,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 4 | Apr,mean,0.011,0.011,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 4 | Apr,p25,0.003,0.003,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 4 | Apr,p75,0.015,0.015,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 5 | May,mean,0.13,0.13,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 5 | May,p25,0.094,0.094,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 5 | May,p75,0.16,0.16,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 6 | Jun,mean,0.41,0.41,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 6 | Jun,p25,0.30,0.30,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 6 | Jun,p75,0.48,0.48,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 7 | Jul,mean,0.33,0.33,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 7 | Jul,p25,0.28,0.28,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 7 | Jul,p75,0.37,0.37,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 8 | Aug,mean,0.40,0.40,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 8 | Aug,p25,0.34,0.34,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 8 | Aug,p75,0.46,0.46,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 9 | Sep,mean,0.51,0.51,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 9 | Sep,p25,0.40,0.40,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 9 | Sep,p75,0.56,0.56,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 10 | Oct,mean,0.068,0.068,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 10 | Oct,p25,0.043,0.043,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 10 | Oct,p75,0.075,0.075,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 11 | Nov,mean,0.005,0.005,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 11 | Nov,p25,0.000,0.000,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 11 | Nov,p75,0.007,0.007,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 12 | Dec,mean,-0.000,-0.000,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 12 | Dec,p25,-0.001,-0.001,True
+monthly.csv,CP | d_wue_midcentury | Case 1 | 12 | Dec,p75,0.000,0.000,True
+monthly.csv,CP | hist_pue | Case 1 | 1 | Jan,mean,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 1 | Jan,p25,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 1 | Jan,p75,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 2 | Feb,mean,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 2 | Feb,p25,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 2 | Feb,p75,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 3 | Mar,mean,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 3 | Mar,p25,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 3 | Mar,p75,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 4 | Apr,mean,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 4 | Apr,p25,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 4 | Apr,p75,1.115,1.115,True
+monthly.csv,CP | hist_pue | Case 1 | 5 | May,mean,1.123,1.123,True
+monthly.csv,CP | hist_pue | Case 1 | 5 | May,p25,1.122,1.122,True
+monthly.csv,CP | hist_pue | Case 1 | 5 | May,p75,1.123,1.123,True
+monthly.csv,CP | hist_pue | Case 1 | 6 | Jun,mean,1.146,1.146,True
+monthly.csv,CP | hist_pue | Case 1 | 6 | Jun,p25,1.145,1.145,True
+monthly.csv,CP | hist_pue | Case 1 | 6 | Jun,p75,1.149,1.149,True
+monthly.csv,CP | hist_pue | Case 1 | 7 | Jul,mean,1.192,1.192,True
+monthly.csv,CP | hist_pue | Case 1 | 7 | Jul,p25,1.190,1.190,True
+monthly.csv,CP | hist_pue | Case 1 | 7 | Jul,p75,1.196,1.196,True
+monthly.csv,CP | hist_pue | Case 1 | 8 | Aug,mean,1.188,1.188,True
+monthly.csv,CP | hist_pue | Case 1 | 8 | Aug,p25,1.185,1.185,True
+monthly.csv,CP | hist_pue | Case 1 | 8 | Aug,p75,1.191,1.191,True
+monthly.csv,CP | hist_pue | Case 1 | 9 | Sep,mean,1.136,1.136,True
+monthly.csv,CP | hist_pue | Case 1 | 9 | Sep,p25,1.134,1.134,True
+monthly.csv,CP | hist_pue | Case 1 | 9 | Sep,p75,1.138,1.138,True
+monthly.csv,CP | hist_pue | Case 1 | 10 | Oct,mean,1.115,1.115,True
+monthly.csv,CP | hist_pue | Case 1 | 10 | Oct,p25,1.115,1.115,True
+monthly.csv,CP | hist_pue | Case 1 | 10 | Oct,p75,1.115,1.115,True
+monthly.csv,CP | hist_pue | Case 1 | 11 | Nov,mean,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 11 | Nov,p25,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 11 | Nov,p75,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 12 | Dec,mean,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 12 | Dec,p25,1.114,1.114,True
+monthly.csv,CP | hist_pue | Case 1 | 12 | Dec,p75,1.114,1.114,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 1 | Jan,mean,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 1 | Jan,p25,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 1 | Jan,p75,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 2 | Feb,mean,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 2 | Feb,p25,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 2 | Feb,p75,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 3 | Mar,mean,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 3 | Mar,p25,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 3 | Mar,p75,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 4 | Apr,mean,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 4 | Apr,p25,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 4 | Apr,p75,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 5 | May,mean,0.0002,0.0002,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 5 | May,p25,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 5 | May,p75,0.0002,0.0002,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 6 | Jun,mean,0.0011,0.0011,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 6 | Jun,p25,0.0008,0.0008,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 6 | Jun,p75,0.0014,0.0014,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 7 | Jul,mean,0.0060,0.0060,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 7 | Jul,p25,0.0038,0.0038,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 7 | Jul,p75,0.0073,0.0073,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 8 | Aug,mean,0.0059,0.0059,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 8 | Aug,p25,0.0044,0.0044,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 8 | Aug,p75,0.0075,0.0075,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 9 | Sep,mean,0.0013,0.0013,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 9 | Sep,p25,0.0005,0.0005,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 9 | Sep,p75,0.0015,0.0015,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 10 | Oct,mean,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 10 | Oct,p25,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 10 | Oct,p75,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 11 | Nov,mean,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 11 | Nov,p25,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 11 | Nov,p75,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 12 | Dec,mean,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 12 | Dec,p25,0.0000,0.0000,True
+monthly.csv,CP | d_pue_midcentury | Case 2 | 12 | Dec,p75,0.0001,0.0001,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 1 | Jan,mean,0.0064,0.0064,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 1 | Jan,p25,0.0047,0.0047,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 1 | Jan,p75,0.0072,0.0072,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 2 | Feb,mean,0.0059,0.0059,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 2 | Feb,p25,0.0044,0.0044,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 2 | Feb,p75,0.0077,0.0077,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 3 | Mar,mean,0.0049,0.0049,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 3 | Mar,p25,0.0033,0.0033,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 3 | Mar,p75,0.0063,0.0063,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 4 | Apr,mean,0.0045,0.0045,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 4 | Apr,p25,0.0035,0.0035,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 4 | Apr,p75,0.0053,0.0053,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 5 | May,mean,0.0062,0.0062,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 5 | May,p25,0.0054,0.0054,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 5 | May,p75,0.0070,0.0070,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 6 | Jun,mean,0.0081,0.0081,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 6 | Jun,p25,0.0068,0.0068,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 6 | Jun,p75,0.0095,0.0095,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 7 | Jul,mean,0.0099,0.0099,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 7 | Jul,p25,0.0084,0.0084,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 7 | Jul,p75,0.011,0.011,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 8 | Aug,mean,0.011,0.011,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 8 | Aug,p25,0.0087,0.0087,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 8 | Aug,p75,0.012,0.012,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 9 | Sep,mean,0.0095,0.0095,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 9 | Sep,p25,0.0075,0.0075,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 9 | Sep,p75,0.011,0.011,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 10 | Oct,mean,0.0074,0.0074,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 10 | Oct,p25,0.0061,0.0061,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 10 | Oct,p75,0.0081,0.0081,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 11 | Nov,mean,0.0053,0.0053,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 11 | Nov,p25,0.0041,0.0041,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 11 | Nov,p75,0.0062,0.0062,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 12 | Dec,mean,0.0052,0.0052,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 12 | Dec,p25,0.0040,0.0040,True
+monthly.csv,CP | d_pue_midcentury | Case 5 | 12 | Dec,p75,0.0067,0.0067,True
+monthly.csv,CP | hist_tmax_C | all | 1 | Jan,mean,5.1,5.1,True
+monthly.csv,CP | hist_tmax_C | all | 1 | Jan,p25,4.8,4.8,True
+monthly.csv,CP | hist_tmax_C | all | 1 | Jan,p75,5.5,5.5,True
+monthly.csv,CP | hist_tmax_C | all | 2 | Feb,mean,9.1,9.1,True
+monthly.csv,CP | hist_tmax_C | all | 2 | Feb,p25,8.8,8.8,True
+monthly.csv,CP | hist_tmax_C | all | 2 | Feb,p75,9.3,9.3,True
+monthly.csv,CP | hist_tmax_C | all | 3 | Mar,mean,14.0,14.0,True
+monthly.csv,CP | hist_tmax_C | all | 3 | Mar,p25,13.8,13.8,True
+monthly.csv,CP | hist_tmax_C | all | 3 | Mar,p75,14.2,14.2,True
+monthly.csv,CP | hist_tmax_C | all | 4 | Apr,mean,18.4,18.4,True
+monthly.csv,CP | hist_tmax_C | all | 4 | Apr,p25,18.3,18.3,True
+monthly.csv,CP | hist_tmax_C | all | 4 | Apr,p75,18.6,18.6,True
+monthly.csv,CP | hist_tmax_C | all | 5 | May,mean,23.4,23.4,True
+monthly.csv,CP | hist_tmax_C | all | 5 | May,p25,23.1,23.1,True
+monthly.csv,CP | hist_tmax_C | all | 5 | May,p75,23.5,23.5,True
+monthly.csv,CP | hist_tmax_C | all | 6 | Jun,mean,27.6,27.6,True
+monthly.csv,CP | hist_tmax_C | all | 6 | Jun,p25,27.4,27.4,True
+monthly.csv,CP | hist_tmax_C | all | 6 | Jun,p75,27.8,27.8,True
+monthly.csv,CP | hist_tmax_C | all | 7 | Jul,mean,32.4,32.4,True
+monthly.csv,CP | hist_tmax_C | all | 7 | Jul,p25,32.3,32.3,True
+monthly.csv,CP | hist_tmax_C | all | 7 | Jul,p75,32.7,32.7,True
+monthly.csv,CP | hist_tmax_C | all | 8 | Aug,mean,31.7,31.7,True
+monthly.csv,CP | hist_tmax_C | all | 8 | Aug,p25,31.6,31.6,True
+monthly.csv,CP | hist_tmax_C | all | 8 | Aug,p75,31.9,31.9,True
+monthly.csv,CP | hist_tmax_C | all | 9 | Sep,mean,26.6,26.6,True
+monthly.csv,CP | hist_tmax_C | all | 9 | Sep,p25,26.4,26.4,True
+monthly.csv,CP | hist_tmax_C | all | 9 | Sep,p75,26.7,26.7,True
+monthly.csv,CP | hist_tmax_C | all | 10 | Oct,mean,19.0,19.0,True
+monthly.csv,CP | hist_tmax_C | all | 10 | Oct,p25,18.8,18.8,True
+monthly.csv,CP | hist_tmax_C | all | 10 | Oct,p75,19.3,19.3,True
+monthly.csv,CP | hist_tmax_C | all | 11 | Nov,mean,10.7,10.7,True
+monthly.csv,CP | hist_tmax_C | all | 11 | Nov,p25,10.4,10.4,True
+monthly.csv,CP | hist_tmax_C | all | 11 | Nov,p75,11.0,11.0,True
+monthly.csv,CP | hist_tmax_C | all | 12 | Dec,mean,5.6,5.6,True
+monthly.csv,CP | hist_tmax_C | all | 12 | Dec,p25,5.3,5.3,True
+monthly.csv,CP | hist_tmax_C | all | 12 | Dec,p75,5.9,5.9,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 1 | Jan,mean,0.0006,0.0006,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 1 | Jan,p25,0.0004,0.0004,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 1 | Jan,p75,0.0008,0.0008,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 2 | Feb,mean,0.0008,0.0008,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 2 | Feb,p25,0.0004,0.0004,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 2 | Feb,p75,0.0009,0.0009,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 3 | Mar,mean,0.0004,0.0004,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 3 | Mar,p25,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 3 | Mar,p75,0.0005,0.0005,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 4 | Apr,mean,0.0007,0.0007,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 4 | Apr,p25,0.0004,0.0004,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 4 | Apr,p75,0.0011,0.0011,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 5 | May,mean,0.0059,0.0059,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 5 | May,p25,0.0034,0.0034,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 5 | May,p75,0.0081,0.0081,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 6 | Jun,mean,0.020,0.020,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 6 | Jun,p25,0.014,0.014,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 6 | Jun,p75,0.023,0.023,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 7 | Jul,mean,0.044,0.044,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 7 | Jul,p25,0.037,0.037,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 7 | Jul,p75,0.051,0.051,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 8 | Aug,mean,0.057,0.057,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 8 | Aug,p25,0.049,0.049,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 8 | Aug,p75,0.062,0.062,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 9 | Sep,mean,0.038,0.038,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 9 | Sep,p25,0.028,0.028,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 9 | Sep,p75,0.043,0.043,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 10 | Oct,mean,0.0069,0.0069,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 10 | Oct,p25,0.0040,0.0040,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 10 | Oct,p75,0.0081,0.0081,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 11 | Nov,mean,0.0023,0.0023,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 11 | Nov,p25,0.0013,0.0013,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 11 | Nov,p75,0.0033,0.0033,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 12 | Dec,mean,0.0005,0.0005,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 12 | Dec,p25,0.0002,0.0002,True
+monthly.csv,WV | d_pue_midcentury | Case 1 | 12 | Dec,p75,0.0007,0.0007,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 1 | Jan,mean,0.007,0.007,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 1 | Jan,p25,0.005,0.005,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 1 | Jan,p75,0.010,0.010,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 2 | Feb,mean,0.009,0.009,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 2 | Feb,p25,0.005,0.005,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 2 | Feb,p75,0.010,0.010,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 3 | Mar,mean,0.003,0.003,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 3 | Mar,p25,0.000,0.000,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 3 | Mar,p75,0.005,0.005,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 4 | Apr,mean,0.007,0.007,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 4 | Apr,p25,0.003,0.003,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 4 | Apr,p75,0.011,0.011,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 5 | May,mean,0.072,0.072,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 5 | May,p25,0.042,0.042,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 5 | May,p75,0.100,0.100,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 6 | Jun,mean,0.25,0.25,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 6 | Jun,p25,0.17,0.17,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 6 | Jun,p75,0.29,0.29,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 7 | Jul,mean,0.55,0.55,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 7 | Jul,p25,0.45,0.45,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 7 | Jul,p75,0.63,0.63,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 8 | Aug,mean,0.72,0.72,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 8 | Aug,p25,0.61,0.61,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 8 | Aug,p75,0.77,0.77,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 9 | Sep,mean,0.48,0.48,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 9 | Sep,p25,0.35,0.35,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 9 | Sep,p75,0.55,0.55,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 10 | Oct,mean,0.086,0.086,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 10 | Oct,p25,0.051,0.051,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 10 | Oct,p75,0.10,0.10,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 11 | Nov,mean,0.030,0.030,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 11 | Nov,p25,0.016,0.016,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 11 | Nov,p75,0.041,0.041,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 12 | Dec,mean,0.006,0.006,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 12 | Dec,p25,0.002,0.002,True
+monthly.csv,WV | d_wue_midcentury | Case 1 | 12 | Dec,p75,0.009,0.009,True
+monthly.csv,WV | hist_pue | Case 1 | 1 | Jan,mean,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 1 | Jan,p25,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 1 | Jan,p75,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 2 | Feb,mean,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 2 | Feb,p25,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 2 | Feb,p75,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 3 | Mar,mean,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 3 | Mar,p25,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 3 | Mar,p75,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 4 | Apr,mean,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 4 | Apr,p25,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 4 | Apr,p75,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 5 | May,mean,1.118,1.118,True
+monthly.csv,WV | hist_pue | Case 1 | 5 | May,p25,1.117,1.117,True
+monthly.csv,WV | hist_pue | Case 1 | 5 | May,p75,1.118,1.118,True
+monthly.csv,WV | hist_pue | Case 1 | 6 | Jun,mean,1.125,1.125,True
+monthly.csv,WV | hist_pue | Case 1 | 6 | Jun,p25,1.124,1.124,True
+monthly.csv,WV | hist_pue | Case 1 | 6 | Jun,p75,1.126,1.126,True
+monthly.csv,WV | hist_pue | Case 1 | 7 | Jul,mean,1.148,1.148,True
+monthly.csv,WV | hist_pue | Case 1 | 7 | Jul,p25,1.145,1.145,True
+monthly.csv,WV | hist_pue | Case 1 | 7 | Jul,p75,1.150,1.150,True
+monthly.csv,WV | hist_pue | Case 1 | 8 | Aug,mean,1.152,1.152,True
+monthly.csv,WV | hist_pue | Case 1 | 8 | Aug,p25,1.150,1.150,True
+monthly.csv,WV | hist_pue | Case 1 | 8 | Aug,p75,1.154,1.154,True
+monthly.csv,WV | hist_pue | Case 1 | 9 | Sep,mean,1.129,1.129,True
+monthly.csv,WV | hist_pue | Case 1 | 9 | Sep,p25,1.128,1.128,True
+monthly.csv,WV | hist_pue | Case 1 | 9 | Sep,p75,1.130,1.130,True
+monthly.csv,WV | hist_pue | Case 1 | 10 | Oct,mean,1.117,1.117,True
+monthly.csv,WV | hist_pue | Case 1 | 10 | Oct,p25,1.117,1.117,True
+monthly.csv,WV | hist_pue | Case 1 | 10 | Oct,p75,1.118,1.118,True
+monthly.csv,WV | hist_pue | Case 1 | 11 | Nov,mean,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 11 | Nov,p25,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 11 | Nov,p75,1.115,1.115,True
+monthly.csv,WV | hist_pue | Case 1 | 12 | Dec,mean,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 12 | Dec,p25,1.114,1.114,True
+monthly.csv,WV | hist_pue | Case 1 | 12 | Dec,p75,1.114,1.114,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 1 | Jan,mean,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 1 | Jan,p25,0.0000,0.0000,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 1 | Jan,p75,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 2 | Feb,mean,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 2 | Feb,p25,0.0000,0.0000,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 2 | Feb,p75,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 3 | Mar,mean,0.0000,0.0000,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 3 | Mar,p25,0.0000,0.0000,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 3 | Mar,p75,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 4 | Apr,mean,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 4 | Apr,p25,0.0000,0.0000,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 4 | Apr,p75,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 5 | May,mean,0.0010,0.0010,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 5 | May,p25,0.0006,0.0006,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 5 | May,p75,0.0012,0.0012,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 6 | Jun,mean,0.0037,0.0037,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 6 | Jun,p25,0.0025,0.0025,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 6 | Jun,p75,0.0043,0.0043,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 7 | Jul,mean,0.010,0.010,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 7 | Jul,p25,0.0082,0.0082,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 7 | Jul,p75,0.011,0.011,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 8 | Aug,mean,0.011,0.011,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 8 | Aug,p25,0.0086,0.0086,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 8 | Aug,p75,0.011,0.011,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 9 | Sep,mean,0.0038,0.0038,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 9 | Sep,p25,0.0024,0.0024,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 9 | Sep,p75,0.0043,0.0043,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 10 | Oct,mean,0.0002,0.0002,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 10 | Oct,p25,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 10 | Oct,p75,0.0003,0.0003,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 11 | Nov,mean,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 11 | Nov,p25,0.0000,0.0000,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 11 | Nov,p75,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 12 | Dec,mean,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 12 | Dec,p25,0.0000,0.0000,True
+monthly.csv,WV | d_pue_midcentury | Case 2 | 12 | Dec,p75,0.0001,0.0001,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 1 | Jan,mean,0.0058,0.0058,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 1 | Jan,p25,0.0046,0.0046,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 1 | Jan,p75,0.0067,0.0067,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 2 | Feb,mean,0.0056,0.0056,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 2 | Feb,p25,0.0043,0.0043,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 2 | Feb,p75,0.0070,0.0070,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 3 | Mar,mean,0.0050,0.0050,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 3 | Mar,p25,0.0036,0.0036,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 3 | Mar,p75,0.0062,0.0062,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 4 | Apr,mean,0.0049,0.0049,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 4 | Apr,p25,0.0039,0.0039,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 4 | Apr,p75,0.0061,0.0061,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 5 | May,mean,0.0063,0.0063,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 5 | May,p25,0.0054,0.0054,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 5 | May,p75,0.0071,0.0071,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 6 | Jun,mean,0.0087,0.0087,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 6 | Jun,p25,0.0069,0.0069,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 6 | Jun,p75,0.0099,0.0099,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 7 | Jul,mean,0.010,0.010,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 7 | Jul,p25,0.0089,0.0089,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 7 | Jul,p75,0.011,0.011,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 8 | Aug,mean,0.012,0.012,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 8 | Aug,p25,0.0094,0.0094,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 8 | Aug,p75,0.012,0.012,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 9 | Sep,mean,0.010,0.010,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 9 | Sep,p25,0.0082,0.0082,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 9 | Sep,p75,0.012,0.012,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 10 | Oct,mean,0.0081,0.0081,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 10 | Oct,p25,0.0066,0.0066,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 10 | Oct,p75,0.0093,0.0093,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 11 | Nov,mean,0.0066,0.0066,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 11 | Nov,p25,0.0052,0.0052,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 11 | Nov,p75,0.0073,0.0073,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 12 | Dec,mean,0.0060,0.0060,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 12 | Dec,p25,0.0046,0.0046,True
+monthly.csv,WV | d_pue_midcentury | Case 5 | 12 | Dec,p75,0.0071,0.0071,True
+monthly.csv,WV | hist_tmax_C | all | 1 | Jan,mean,7.8,7.8,True
+monthly.csv,WV | hist_tmax_C | all | 1 | Jan,p25,7.5,7.5,True
+monthly.csv,WV | hist_tmax_C | all | 1 | Jan,p75,8.2,8.2,True
+monthly.csv,WV | hist_tmax_C | all | 2 | Feb,mean,10.6,10.6,True
+monthly.csv,WV | hist_tmax_C | all | 2 | Feb,p25,10.3,10.3,True
+monthly.csv,WV | hist_tmax_C | all | 2 | Feb,p75,10.9,10.9,True
+monthly.csv,WV | hist_tmax_C | all | 3 | Mar,mean,13.1,13.1,True
+monthly.csv,WV | hist_tmax_C | all | 3 | Mar,p25,13.0,13.0,True
+monthly.csv,WV | hist_tmax_C | all | 3 | Mar,p75,13.3,13.3,True
+monthly.csv,WV | hist_tmax_C | all | 4 | Apr,mean,16.2,16.2,True
+monthly.csv,WV | hist_tmax_C | all | 4 | Apr,p25,16.1,16.1,True
+monthly.csv,WV | hist_tmax_C | all | 4 | Apr,p75,16.4,16.4,True
+monthly.csv,WV | hist_tmax_C | all | 5 | May,mean,20.0,20.0,True
+monthly.csv,WV | hist_tmax_C | all | 5 | May,p25,19.8,19.8,True
+monthly.csv,WV | hist_tmax_C | all | 5 | May,p75,20.2,20.2,True
+monthly.csv,WV | hist_tmax_C | all | 6 | Jun,mean,23.3,23.3,True
+monthly.csv,WV | hist_tmax_C | all | 6 | Jun,p25,23.1,23.1,True
+monthly.csv,WV | hist_tmax_C | all | 6 | Jun,p75,23.4,23.4,True
+monthly.csv,WV | hist_tmax_C | all | 7 | Jul,mean,27.4,27.4,True
+monthly.csv,WV | hist_tmax_C | all | 7 | Jul,p25,27.1,27.1,True
+monthly.csv,WV | hist_tmax_C | all | 7 | Jul,p75,27.6,27.6,True
+monthly.csv,WV | hist_tmax_C | all | 8 | Aug,mean,27.5,27.5,True
+monthly.csv,WV | hist_tmax_C | all | 8 | Aug,p25,27.3,27.3,True
+monthly.csv,WV | hist_tmax_C | all | 8 | Aug,p75,27.7,27.7,True
+monthly.csv,WV | hist_tmax_C | all | 9 | Sep,mean,24.4,24.4,True
+monthly.csv,WV | hist_tmax_C | all | 9 | Sep,p25,24.1,24.1,True
+monthly.csv,WV | hist_tmax_C | all | 9 | Sep,p75,24.6,24.6,True
+monthly.csv,WV | hist_tmax_C | all | 10 | Oct,mean,18.1,18.1,True
+monthly.csv,WV | hist_tmax_C | all | 10 | Oct,p25,17.9,17.9,True
+monthly.csv,WV | hist_tmax_C | all | 10 | Oct,p75,18.3,18.3,True
+monthly.csv,WV | hist_tmax_C | all | 11 | Nov,mean,11.5,11.5,True
+monthly.csv,WV | hist_tmax_C | all | 11 | Nov,p25,11.3,11.3,True
+monthly.csv,WV | hist_tmax_C | all | 11 | Nov,p75,11.7,11.7,True
+monthly.csv,WV | hist_tmax_C | all | 12 | Dec,mean,8.1,8.1,True
+monthly.csv,WV | hist_tmax_C | all | 12 | Dec,p25,7.9,7.9,True
+monthly.csv,WV | hist_tmax_C | all | 12 | Dec,p75,8.3,8.3,True
+model_agreement.csv,77.5% | PUE | 2045–2074 | WV > CP,n_models,18,18,True
+model_agreement.csv,77.5% | PUE | 2045–2074 | WV > CP,of,20,20,True
+model_agreement.csv,77.5% | PUE | 2045–2074 | WV > KM,n_models,20,20,True
+model_agreement.csv,77.5% | PUE | 2045–2074 | WV > KM,of,20,20,True
+model_agreement.csv,77.5% | PUE | 2045–2074 | CP > KM,n_models,16,16,True
+model_agreement.csv,77.5% | PUE | 2045–2074 | CP > KM,of,20,20,True
+model_agreement.csv,77.5% | PUE | 2075–2100 | WV > CP,n_models,20,20,True
+model_agreement.csv,77.5% | PUE | 2075–2100 | WV > CP,of,20,20,True
+model_agreement.csv,77.5% | PUE | 2075–2100 | WV > KM,n_models,20,20,True
+model_agreement.csv,77.5% | PUE | 2075–2100 | WV > KM,of,20,20,True
+model_agreement.csv,77.5% | PUE | 2075–2100 | CP > KM,n_models,11,11,True
+model_agreement.csv,77.5% | PUE | 2075–2100 | CP > KM,of,20,20,True
+model_agreement.csv,77.5% | WUE | 2045–2074 | WV > CP,n_models,19,19,True
+model_agreement.csv,77.5% | WUE | 2045–2074 | WV > CP,of,20,20,True
+model_agreement.csv,77.5% | WUE | 2045–2074 | WV > KM,n_models,20,20,True
+model_agreement.csv,77.5% | WUE | 2045–2074 | WV > KM,of,20,20,True
+model_agreement.csv,77.5% | WUE | 2045–2074 | CP > KM,n_models,16,16,True
+model_agreement.csv,77.5% | WUE | 2045–2074 | CP > KM,of,20,20,True
+model_agreement.csv,77.5% | WUE | 2075–2100 | WV > CP,n_models,20,20,True
+model_agreement.csv,77.5% | WUE | 2075–2100 | WV > CP,of,20,20,True
+model_agreement.csv,77.5% | WUE | 2075–2100 | WV > KM,n_models,20,20,True
+model_agreement.csv,77.5% | WUE | 2075–2100 | WV > KM,of,20,20,True
+model_agreement.csv,77.5% | WUE | 2075–2100 | CP > KM,n_models,11,11,True
+model_agreement.csv,77.5% | WUE | 2075–2100 | CP > KM,of,20,20,True
+rh_sensitivity.csv,ECSF | 60%,pue_historical,1.125,1.125,True
+rh_sensitivity.csv,ECSF | 60%,pue_d_midcentury,0.011,0.011,True
+rh_sensitivity.csv,ECSF | 60%,pue_d_midcentury_p25,0.0081,0.0081,True
+rh_sensitivity.csv,ECSF | 60%,pue_d_midcentury_p75,0.011,0.011,True
+rh_sensitivity.csv,ECSF | 60%,pue_d_endcentury,0.019,0.019,True
+rh_sensitivity.csv,ECSF | 60%,pue_d_endcentury_p25,0.015,0.015,True
+rh_sensitivity.csv,ECSF | 60%,pue_d_endcentury_p75,0.022,0.022,True
+rh_sensitivity.csv,ECSF | 60%,wue_historical,0.07,0.07,True
+rh_sensitivity.csv,ECSF | 60%,wue_d_midcentury,0.13,0.13,True
+rh_sensitivity.csv,ECSF | 60%,wue_d_midcentury_p25,0.10,0.10,True
+rh_sensitivity.csv,ECSF | 60%,wue_d_midcentury_p75,0.14,0.14,True
+rh_sensitivity.csv,ECSF | 60%,wue_d_endcentury,0.23,0.23,True
+rh_sensitivity.csv,ECSF | 60%,wue_d_endcentury_p25,0.19,0.19,True
+rh_sensitivity.csv,ECSF | 60%,wue_d_endcentury_p75,0.28,0.28,True
+rh_sensitivity.csv,ECSF | 77.5%,pue_historical,1.125,1.125,True
+rh_sensitivity.csv,ECSF | 77.5%,pue_d_midcentury,0.0093,0.0093,True
+rh_sensitivity.csv,ECSF | 77.5%,pue_d_midcentury_p25,0.0075,0.0075,True
+rh_sensitivity.csv,ECSF | 77.5%,pue_d_midcentury_p75,0.0098,0.0098,True
+rh_sensitivity.csv,ECSF | 77.5%,pue_d_endcentury,0.015,0.015,True
+rh_sensitivity.csv,ECSF | 77.5%,pue_d_endcentury_p25,0.013,0.013,True
+rh_sensitivity.csv,ECSF | 77.5%,pue_d_endcentury_p75,0.018,0.018,True
+rh_sensitivity.csv,ECSF | 77.5%,wue_historical,0.07,0.07,True
+rh_sensitivity.csv,ECSF | 77.5%,wue_d_midcentury,0.12,0.12,True
+rh_sensitivity.csv,ECSF | 77.5%,wue_d_midcentury_p25,0.094,0.094,True
+rh_sensitivity.csv,ECSF | 77.5%,wue_d_midcentury_p75,0.12,0.12,True
+rh_sensitivity.csv,ECSF | 77.5%,wue_d_endcentury,0.19,0.19,True
+rh_sensitivity.csv,ECSF | 77.5%,wue_d_endcentury_p25,0.16,0.16,True
+rh_sensitivity.csv,ECSF | 77.5%,wue_d_endcentury_p75,0.23,0.23,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),pue_historical,0.0001,0.0001,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),pue_d_midcentury,0.0013,0.0013,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),pue_d_midcentury_p25,,,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),pue_d_midcentury_p75,,,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),pue_d_endcentury,0.0031,0.0031,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),pue_d_endcentury_p25,,,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),pue_d_endcentury_p75,,,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),wue_historical,0.002,0.002,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),wue_d_midcentury,0.018,0.018,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),wue_d_midcentury_p25,,,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),wue_d_midcentury_p75,,,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),wue_d_endcentury,0.042,0.042,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),wue_d_endcentury_p25,,,True
+rh_sensitivity.csv,ECSF | difference (60% − 77.5%),wue_d_endcentury_p75,,,True
+rh_sensitivity.csv,BM | 60%,pue_historical,1.128,1.128,True
+rh_sensitivity.csv,BM | 60%,pue_d_midcentury,0.011,0.011,True
+rh_sensitivity.csv,BM | 60%,pue_d_midcentury_p25,0.0089,0.0089,True
+rh_sensitivity.csv,BM | 60%,pue_d_midcentury_p75,0.013,0.013,True
+rh_sensitivity.csv,BM | 60%,pue_d_endcentury,0.018,0.018,True
+rh_sensitivity.csv,BM | 60%,pue_d_endcentury_p25,0.015,0.015,True
+rh_sensitivity.csv,BM | 60%,pue_d_endcentury_p75,0.022,0.022,True
+rh_sensitivity.csv,BM | 60%,wue_historical,0.12,0.12,True
+rh_sensitivity.csv,BM | 60%,wue_d_midcentury,0.13,0.13,True
+rh_sensitivity.csv,BM | 60%,wue_d_midcentury_p25,0.11,0.11,True
+rh_sensitivity.csv,BM | 60%,wue_d_midcentury_p75,0.16,0.16,True
+rh_sensitivity.csv,BM | 60%,wue_d_endcentury,0.23,0.23,True
+rh_sensitivity.csv,BM | 60%,wue_d_endcentury_p25,0.18,0.18,True
+rh_sensitivity.csv,BM | 60%,wue_d_endcentury_p75,0.27,0.27,True
+rh_sensitivity.csv,BM | 77.5%,pue_historical,1.128,1.128,True
+rh_sensitivity.csv,BM | 77.5%,pue_d_midcentury,0.0100,0.0100,True
+rh_sensitivity.csv,BM | 77.5%,pue_d_midcentury_p25,0.0082,0.0082,True
+rh_sensitivity.csv,BM | 77.5%,pue_d_midcentury_p75,0.011,0.011,True
+rh_sensitivity.csv,BM | 77.5%,pue_d_endcentury,0.016,0.016,True
+rh_sensitivity.csv,BM | 77.5%,pue_d_endcentury_p25,0.013,0.013,True
+rh_sensitivity.csv,BM | 77.5%,pue_d_endcentury_p75,0.019,0.019,True
+rh_sensitivity.csv,BM | 77.5%,wue_historical,0.12,0.12,True
+rh_sensitivity.csv,BM | 77.5%,wue_d_midcentury,0.12,0.12,True
+rh_sensitivity.csv,BM | 77.5%,wue_d_midcentury_p25,0.10,0.10,True
+rh_sensitivity.csv,BM | 77.5%,wue_d_midcentury_p75,0.14,0.14,True
+rh_sensitivity.csv,BM | 77.5%,wue_d_endcentury,0.20,0.20,True
+rh_sensitivity.csv,BM | 77.5%,wue_d_endcentury_p25,0.16,0.16,True
+rh_sensitivity.csv,BM | 77.5%,wue_d_endcentury_p75,0.23,0.23,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),pue_historical,0.0002,0.0002,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),pue_d_midcentury,0.0009,0.0009,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),pue_d_midcentury_p25,,,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),pue_d_midcentury_p75,,,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),pue_d_endcentury,0.0023,0.0023,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),pue_d_endcentury_p25,,,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),pue_d_endcentury_p75,,,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),wue_historical,0.003,0.003,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),wue_d_midcentury,0.012,0.012,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),wue_d_midcentury_p25,,,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),wue_d_midcentury_p75,,,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),wue_d_endcentury,0.031,0.031,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),wue_d_endcentury_p25,,,True
+rh_sensitivity.csv,BM | difference (60% − 77.5%),wue_d_endcentury_p75,,,True
+rh_sensitivity.csv,CP | 60%,pue_historical,1.138,1.138,True
+rh_sensitivity.csv,CP | 60%,pue_d_midcentury,0.017,0.017,True
+rh_sensitivity.csv,CP | 60%,pue_d_midcentury_p25,0.014,0.014,True
+rh_sensitivity.csv,CP | 60%,pue_d_midcentury_p75,0.019,0.019,True
+rh_sensitivity.csv,CP | 60%,pue_d_endcentury,0.025,0.025,True
+rh_sensitivity.csv,CP | 60%,pue_d_endcentury_p25,0.022,0.022,True
+rh_sensitivity.csv,CP | 60%,pue_d_endcentury_p75,0.029,0.029,True
+rh_sensitivity.csv,CP | 60%,wue_historical,0.31,0.31,True
+rh_sensitivity.csv,CP | 60%,wue_d_midcentury,0.21,0.21,True
+rh_sensitivity.csv,CP | 60%,wue_d_midcentury_p25,0.17,0.17,True
+rh_sensitivity.csv,CP | 60%,wue_d_midcentury_p75,0.24,0.24,True
+rh_sensitivity.csv,CP | 60%,wue_d_endcentury,0.31,0.31,True
+rh_sensitivity.csv,CP | 60%,wue_d_endcentury_p25,0.27,0.27,True
+rh_sensitivity.csv,CP | 60%,wue_d_endcentury_p75,0.35,0.35,True
+rh_sensitivity.csv,CP | 77.5%,pue_historical,1.132,1.132,True
+rh_sensitivity.csv,CP | 77.5%,pue_d_midcentury,0.013,0.013,True
+rh_sensitivity.csv,CP | 77.5%,pue_d_midcentury_p25,0.010,0.010,True
+rh_sensitivity.csv,CP | 77.5%,pue_d_midcentury_p75,0.015,0.015,True
+rh_sensitivity.csv,CP | 77.5%,pue_d_endcentury,0.019,0.019,True
+rh_sensitivity.csv,CP | 77.5%,pue_d_endcentury_p25,0.016,0.016,True
+rh_sensitivity.csv,CP | 77.5%,pue_d_endcentury_p75,0.021,0.021,True
+rh_sensitivity.csv,CP | 77.5%,wue_historical,0.23,0.23,True
+rh_sensitivity.csv,CP | 77.5%,wue_d_midcentury,0.16,0.16,True
+rh_sensitivity.csv,CP | 77.5%,wue_d_midcentury_p25,0.13,0.13,True
+rh_sensitivity.csv,CP | 77.5%,wue_d_midcentury_p75,0.18,0.18,True
+rh_sensitivity.csv,CP | 77.5%,wue_d_endcentury,0.23,0.23,True
+rh_sensitivity.csv,CP | 77.5%,wue_d_endcentury_p25,0.19,0.19,True
+rh_sensitivity.csv,CP | 77.5%,wue_d_endcentury_p75,0.26,0.26,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),pue_historical,0.0060,0.0060,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),pue_d_midcentury,0.0039,0.0039,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),pue_d_midcentury_p25,,,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),pue_d_midcentury_p75,,,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),pue_d_endcentury,0.0059,0.0059,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),pue_d_endcentury_p25,,,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),pue_d_endcentury_p75,,,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),wue_historical,0.081,0.081,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),wue_d_midcentury,0.051,0.051,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),wue_d_midcentury_p25,,,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),wue_d_midcentury_p75,,,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),wue_d_endcentury,0.077,0.077,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),wue_d_endcentury_p25,,,True
+rh_sensitivity.csv,CP | difference (60% − 77.5%),wue_d_endcentury_p75,,,True
+rh_sensitivity.csv,KM | 60%,pue_historical,1.134,1.134,True
+rh_sensitivity.csv,KM | 60%,pue_d_midcentury,0.019,0.019,True
+rh_sensitivity.csv,KM | 60%,pue_d_midcentury_p25,0.015,0.015,True
+rh_sensitivity.csv,KM | 60%,pue_d_midcentury_p75,0.021,0.021,True
+rh_sensitivity.csv,KM | 60%,pue_d_endcentury,0.030,0.030,True
+rh_sensitivity.csv,KM | 60%,pue_d_endcentury_p25,0.025,0.025,True
+rh_sensitivity.csv,KM | 60%,pue_d_endcentury_p75,0.034,0.034,True
+rh_sensitivity.csv,KM | 60%,wue_historical,0.23,0.23,True
+rh_sensitivity.csv,KM | 60%,wue_d_midcentury,0.24,0.24,True
+rh_sensitivity.csv,KM | 60%,wue_d_midcentury_p25,0.20,0.20,True
+rh_sensitivity.csv,KM | 60%,wue_d_midcentury_p75,0.27,0.27,True
+rh_sensitivity.csv,KM | 60%,wue_d_endcentury,0.38,0.38,True
+rh_sensitivity.csv,KM | 60%,wue_d_endcentury_p25,0.32,0.32,True
+rh_sensitivity.csv,KM | 60%,wue_d_endcentury_p75,0.43,0.43,True
+rh_sensitivity.csv,KM | 77.5%,pue_historical,1.131,1.131,True
+rh_sensitivity.csv,KM | 77.5%,pue_d_midcentury,0.012,0.012,True
+rh_sensitivity.csv,KM | 77.5%,pue_d_midcentury_p25,0.0097,0.0097,True
+rh_sensitivity.csv,KM | 77.5%,pue_d_midcentury_p75,0.013,0.013,True
+rh_sensitivity.csv,KM | 77.5%,pue_d_endcentury,0.019,0.019,True
+rh_sensitivity.csv,KM | 77.5%,pue_d_endcentury_p25,0.016,0.016,True
+rh_sensitivity.csv,KM | 77.5%,pue_d_endcentury_p75,0.022,0.022,True
+rh_sensitivity.csv,KM | 77.5%,wue_historical,0.19,0.19,True
+rh_sensitivity.csv,KM | 77.5%,wue_d_midcentury,0.14,0.14,True
+rh_sensitivity.csv,KM | 77.5%,wue_d_midcentury_p25,0.12,0.12,True
+rh_sensitivity.csv,KM | 77.5%,wue_d_midcentury_p75,0.15,0.15,True
+rh_sensitivity.csv,KM | 77.5%,wue_d_endcentury,0.23,0.23,True
+rh_sensitivity.csv,KM | 77.5%,wue_d_endcentury_p25,0.19,0.19,True
+rh_sensitivity.csv,KM | 77.5%,wue_d_endcentury_p75,0.26,0.26,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),pue_historical,0.0036,0.0036,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),pue_d_midcentury,0.0071,0.0071,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),pue_d_midcentury_p25,,,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),pue_d_midcentury_p75,,,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),pue_d_endcentury,0.012,0.012,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),pue_d_endcentury_p25,,,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),pue_d_endcentury_p75,,,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),wue_historical,0.049,0.049,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),wue_d_midcentury,0.096,0.096,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),wue_d_midcentury_p25,,,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),wue_d_midcentury_p75,,,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),wue_d_endcentury,0.16,0.16,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),wue_d_endcentury_p25,,,True
+rh_sensitivity.csv,KM | difference (60% − 77.5%),wue_d_endcentury_p75,,,True
+rh_sensitivity.csv,WV | 60%,pue_historical,1.129,1.129,True
+rh_sensitivity.csv,WV | 60%,pue_d_midcentury,0.021,0.021,True
+rh_sensitivity.csv,WV | 60%,pue_d_midcentury_p25,0.017,0.017,True
+rh_sensitivity.csv,WV | 60%,pue_d_midcentury_p75,0.025,0.025,True
+rh_sensitivity.csv,WV | 60%,pue_d_endcentury,0.037,0.037,True
+rh_sensitivity.csv,WV | 60%,pue_d_endcentury_p25,0.030,0.030,True
+rh_sensitivity.csv,WV | 60%,pue_d_endcentury_p75,0.043,0.043,True
+rh_sensitivity.csv,WV | 60%,wue_historical,0.20,0.20,True
+rh_sensitivity.csv,WV | 60%,wue_d_midcentury,0.27,0.27,True
+rh_sensitivity.csv,WV | 60%,wue_d_midcentury_p25,0.21,0.21,True
+rh_sensitivity.csv,WV | 60%,wue_d_midcentury_p75,0.31,0.31,True
+rh_sensitivity.csv,WV | 60%,wue_d_endcentury,0.47,0.47,True
+rh_sensitivity.csv,WV | 60%,wue_d_endcentury_p25,0.38,0.38,True
+rh_sensitivity.csv,WV | 60%,wue_d_endcentury_p75,0.54,0.54,True
+rh_sensitivity.csv,WV | 77.5%,pue_historical,1.123,1.123,True
+rh_sensitivity.csv,WV | 77.5%,pue_d_midcentury,0.015,0.015,True
+rh_sensitivity.csv,WV | 77.5%,pue_d_midcentury_p25,0.012,0.012,True
+rh_sensitivity.csv,WV | 77.5%,pue_d_midcentury_p75,0.017,0.017,True
+rh_sensitivity.csv,WV | 77.5%,pue_d_endcentury,0.026,0.026,True
+rh_sensitivity.csv,WV | 77.5%,pue_d_endcentury_p25,0.021,0.021,True
+rh_sensitivity.csv,WV | 77.5%,pue_d_endcentury_p75,0.029,0.029,True
+rh_sensitivity.csv,WV | 77.5%,wue_historical,0.11,0.11,True
+rh_sensitivity.csv,WV | 77.5%,wue_d_midcentury,0.19,0.19,True
+rh_sensitivity.csv,WV | 77.5%,wue_d_midcentury_p25,0.15,0.15,True
+rh_sensitivity.csv,WV | 77.5%,wue_d_midcentury_p75,0.22,0.22,True
+rh_sensitivity.csv,WV | 77.5%,wue_d_endcentury,0.32,0.32,True
+rh_sensitivity.csv,WV | 77.5%,wue_d_endcentury_p25,0.26,0.26,True
+rh_sensitivity.csv,WV | 77.5%,wue_d_endcentury_p75,0.36,0.36,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),pue_historical,0.0065,0.0065,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),pue_d_midcentury,0.0064,0.0064,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),pue_d_midcentury_p25,,,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),pue_d_midcentury_p75,,,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),pue_d_endcentury,0.011,0.011,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),pue_d_endcentury_p25,,,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),pue_d_endcentury_p75,,,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),wue_historical,0.088,0.088,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),wue_d_midcentury,0.086,0.086,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),wue_d_midcentury_p25,,,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),wue_d_midcentury_p75,,,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),wue_d_endcentury,0.15,0.15,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),wue_d_endcentury_p25,,,True
+rh_sensitivity.csv,WV | difference (60% − 77.5%),wue_d_endcentury_p75,,,True
