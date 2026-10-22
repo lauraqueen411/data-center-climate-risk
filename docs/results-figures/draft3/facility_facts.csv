@@ -1,0 +1,15 @@
+quantity,scope,which,value,n_facilities_at_value,ecoregions,grid_cells
+historical,all,min,1.120,1,WV,49_36
+d_midcentury,all,min,0.0089,1,WV,49_36
+historical,all,max,1.133,4,CP,66_82
+d_midcentury,all,max,0.016,8,WV,61_30
+d_midcentury,ECSF,min,0.0093,1,ECSF,37_56
+d_midcentury,ECSF,max,0.0093,1,ECSF,37_56
+d_midcentury,BM,min,0.0099,9,BM,41_63
+d_midcentury,BM,max,0.010,4,BM,41_64
+d_midcentury,CP,min,0.012,2,CP,63_58
+d_midcentury,CP,max,0.013,13,CP,66_83
+d_midcentury,KM,min,0.012,1,KM,12_24
+d_midcentury,KM,max,0.012,1,KM,12_24
+d_midcentury,WV,min,0.0089,1,WV,49_36
+d_midcentury,WV,max,0.016,8,WV,61_30

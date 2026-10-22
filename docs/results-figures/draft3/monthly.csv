@@ -1,0 +1,145 @@
+region,quantity,case,month,month_name,mean,p25,p75
+CP,d_pue_midcentury,Case 1,1,Jan,0.0001,0.0001,0.0002
+CP,d_pue_midcentury,Case 1,2,Feb,0.0001,0.0001,0.0002
+CP,d_pue_midcentury,Case 1,3,Mar,0.0002,0.0001,0.0002
+CP,d_pue_midcentury,Case 1,4,Apr,0.0010,0.0003,0.0013
+CP,d_pue_midcentury,Case 1,5,May,0.011,0.0074,0.013
+CP,d_pue_midcentury,Case 1,6,Jun,0.033,0.024,0.038
+CP,d_pue_midcentury,Case 1,7,Jul,0.028,0.024,0.031
+CP,d_pue_midcentury,Case 1,8,Aug,0.033,0.029,0.039
+CP,d_pue_midcentury,Case 1,9,Sep,0.040,0.032,0.044
+CP,d_pue_midcentury,Case 1,10,Oct,0.0055,0.0035,0.0060
+CP,d_pue_midcentury,Case 1,11,Nov,0.0005,0.0001,0.0007
+CP,d_pue_midcentury,Case 1,12,Dec,0.0001,0.0000,0.0001
+CP,d_wue_midcentury,Case 1,1,Jan,-0.001,-0.002,-0.000
+CP,d_wue_midcentury,Case 1,2,Feb,-0.000,-0.001,0.000
+CP,d_wue_midcentury,Case 1,3,Mar,0.000,-0.000,0.001
+CP,d_wue_midcentury,Case 1,4,Apr,0.011,0.003,0.015
+CP,d_wue_midcentury,Case 1,5,May,0.13,0.094,0.16
+CP,d_wue_midcentury,Case 1,6,Jun,0.41,0.30,0.48
+CP,d_wue_midcentury,Case 1,7,Jul,0.33,0.28,0.37
+CP,d_wue_midcentury,Case 1,8,Aug,0.40,0.34,0.46
+CP,d_wue_midcentury,Case 1,9,Sep,0.51,0.40,0.56
+CP,d_wue_midcentury,Case 1,10,Oct,0.068,0.043,0.075
+CP,d_wue_midcentury,Case 1,11,Nov,0.005,0.000,0.007
+CP,d_wue_midcentury,Case 1,12,Dec,-0.000,-0.001,0.000
+CP,hist_pue,Case 1,1,Jan,1.114,1.114,1.114
+CP,hist_pue,Case 1,2,Feb,1.114,1.114,1.114
+CP,hist_pue,Case 1,3,Mar,1.114,1.114,1.114
+CP,hist_pue,Case 1,4,Apr,1.114,1.114,1.115
+CP,hist_pue,Case 1,5,May,1.123,1.122,1.123
+CP,hist_pue,Case 1,6,Jun,1.146,1.145,1.149
+CP,hist_pue,Case 1,7,Jul,1.192,1.190,1.196
+CP,hist_pue,Case 1,8,Aug,1.188,1.185,1.191
+CP,hist_pue,Case 1,9,Sep,1.136,1.134,1.138
+CP,hist_pue,Case 1,10,Oct,1.115,1.115,1.115
+CP,hist_pue,Case 1,11,Nov,1.114,1.114,1.114
+CP,hist_pue,Case 1,12,Dec,1.114,1.114,1.114
+CP,d_pue_midcentury,Case 2,1,Jan,0.0001,0.0000,0.0001
+CP,d_pue_midcentury,Case 2,2,Feb,0.0001,0.0000,0.0001
+CP,d_pue_midcentury,Case 2,3,Mar,0.0000,0.0000,0.0001
+CP,d_pue_midcentury,Case 2,4,Apr,0.0000,0.0000,0.0000
+CP,d_pue_midcentury,Case 2,5,May,0.0002,0.0001,0.0002
+CP,d_pue_midcentury,Case 2,6,Jun,0.0011,0.0008,0.0014
+CP,d_pue_midcentury,Case 2,7,Jul,0.0060,0.0038,0.0073
+CP,d_pue_midcentury,Case 2,8,Aug,0.0059,0.0044,0.0075
+CP,d_pue_midcentury,Case 2,9,Sep,0.0013,0.0005,0.0015
+CP,d_pue_midcentury,Case 2,10,Oct,0.0001,0.0001,0.0001
+CP,d_pue_midcentury,Case 2,11,Nov,0.0000,0.0000,0.0001
+CP,d_pue_midcentury,Case 2,12,Dec,0.0001,0.0000,0.0001
+CP,d_pue_midcentury,Case 5,1,Jan,0.0064,0.0047,0.0072
+CP,d_pue_midcentury,Case 5,2,Feb,0.0059,0.0044,0.0077
+CP,d_pue_midcentury,Case 5,3,Mar,0.0049,0.0033,0.0063
+CP,d_pue_midcentury,Case 5,4,Apr,0.0045,0.0035,0.0053
+CP,d_pue_midcentury,Case 5,5,May,0.0062,0.0054,0.0070
+CP,d_pue_midcentury,Case 5,6,Jun,0.0081,0.0068,0.0095
+CP,d_pue_midcentury,Case 5,7,Jul,0.0099,0.0084,0.011
+CP,d_pue_midcentury,Case 5,8,Aug,0.011,0.0087,0.012
+CP,d_pue_midcentury,Case 5,9,Sep,0.0095,0.0075,0.011
+CP,d_pue_midcentury,Case 5,10,Oct,0.0074,0.0061,0.0081
+CP,d_pue_midcentury,Case 5,11,Nov,0.0053,0.0041,0.0062
+CP,d_pue_midcentury,Case 5,12,Dec,0.0052,0.0040,0.0067
+CP,hist_tmax_C,all,1,Jan,5.1,4.8,5.5
+CP,hist_tmax_C,all,2,Feb,9.1,8.8,9.3
+CP,hist_tmax_C,all,3,Mar,14.0,13.8,14.2
+CP,hist_tmax_C,all,4,Apr,18.4,18.3,18.6
+CP,hist_tmax_C,all,5,May,23.4,23.1,23.5
+CP,hist_tmax_C,all,6,Jun,27.6,27.4,27.8
+CP,hist_tmax_C,all,7,Jul,32.4,32.3,32.7
+CP,hist_tmax_C,all,8,Aug,31.7,31.6,31.9
+CP,hist_tmax_C,all,9,Sep,26.6,26.4,26.7
+CP,hist_tmax_C,all,10,Oct,19.0,18.8,19.3
+CP,hist_tmax_C,all,11,Nov,10.7,10.4,11.0
+CP,hist_tmax_C,all,12,Dec,5.6,5.3,5.9
+WV,d_pue_midcentury,Case 1,1,Jan,0.0006,0.0004,0.0008
+WV,d_pue_midcentury,Case 1,2,Feb,0.0008,0.0004,0.0009
+WV,d_pue_midcentury,Case 1,3,Mar,0.0004,0.0001,0.0005
+WV,d_pue_midcentury,Case 1,4,Apr,0.0007,0.0004,0.0011
+WV,d_pue_midcentury,Case 1,5,May,0.0059,0.0034,0.0081
+WV,d_pue_midcentury,Case 1,6,Jun,0.020,0.014,0.023
+WV,d_pue_midcentury,Case 1,7,Jul,0.044,0.037,0.051
+WV,d_pue_midcentury,Case 1,8,Aug,0.057,0.049,0.062
+WV,d_pue_midcentury,Case 1,9,Sep,0.038,0.028,0.043
+WV,d_pue_midcentury,Case 1,10,Oct,0.0069,0.0040,0.0081
+WV,d_pue_midcentury,Case 1,11,Nov,0.0023,0.0013,0.0033
+WV,d_pue_midcentury,Case 1,12,Dec,0.0005,0.0002,0.0007
+WV,d_wue_midcentury,Case 1,1,Jan,0.007,0.005,0.010
+WV,d_wue_midcentury,Case 1,2,Feb,0.009,0.005,0.010
+WV,d_wue_midcentury,Case 1,3,Mar,0.003,0.000,0.005
+WV,d_wue_midcentury,Case 1,4,Apr,0.007,0.003,0.011
+WV,d_wue_midcentury,Case 1,5,May,0.072,0.042,0.100
+WV,d_wue_midcentury,Case 1,6,Jun,0.25,0.17,0.29
+WV,d_wue_midcentury,Case 1,7,Jul,0.55,0.45,0.63
+WV,d_wue_midcentury,Case 1,8,Aug,0.72,0.61,0.77
+WV,d_wue_midcentury,Case 1,9,Sep,0.48,0.35,0.55
+WV,d_wue_midcentury,Case 1,10,Oct,0.086,0.051,0.10
+WV,d_wue_midcentury,Case 1,11,Nov,0.030,0.016,0.041
+WV,d_wue_midcentury,Case 1,12,Dec,0.006,0.002,0.009
+WV,hist_pue,Case 1,1,Jan,1.114,1.114,1.114
+WV,hist_pue,Case 1,2,Feb,1.114,1.114,1.114
+WV,hist_pue,Case 1,3,Mar,1.114,1.114,1.114
+WV,hist_pue,Case 1,4,Apr,1.114,1.114,1.114
+WV,hist_pue,Case 1,5,May,1.118,1.117,1.118
+WV,hist_pue,Case 1,6,Jun,1.125,1.124,1.126
+WV,hist_pue,Case 1,7,Jul,1.148,1.145,1.150
+WV,hist_pue,Case 1,8,Aug,1.152,1.150,1.154
+WV,hist_pue,Case 1,9,Sep,1.129,1.128,1.130
+WV,hist_pue,Case 1,10,Oct,1.117,1.117,1.118
+WV,hist_pue,Case 1,11,Nov,1.114,1.114,1.115
+WV,hist_pue,Case 1,12,Dec,1.114,1.114,1.114
+WV,d_pue_midcentury,Case 2,1,Jan,0.0001,0.0000,0.0001
+WV,d_pue_midcentury,Case 2,2,Feb,0.0001,0.0000,0.0001
+WV,d_pue_midcentury,Case 2,3,Mar,0.0000,0.0000,0.0001
+WV,d_pue_midcentury,Case 2,4,Apr,0.0001,0.0000,0.0001
+WV,d_pue_midcentury,Case 2,5,May,0.0010,0.0006,0.0012
+WV,d_pue_midcentury,Case 2,6,Jun,0.0037,0.0025,0.0043
+WV,d_pue_midcentury,Case 2,7,Jul,0.010,0.0082,0.011
+WV,d_pue_midcentury,Case 2,8,Aug,0.011,0.0086,0.011
+WV,d_pue_midcentury,Case 2,9,Sep,0.0038,0.0024,0.0043
+WV,d_pue_midcentury,Case 2,10,Oct,0.0002,0.0001,0.0003
+WV,d_pue_midcentury,Case 2,11,Nov,0.0001,0.0000,0.0001
+WV,d_pue_midcentury,Case 2,12,Dec,0.0001,0.0000,0.0001
+WV,d_pue_midcentury,Case 5,1,Jan,0.0058,0.0046,0.0067
+WV,d_pue_midcentury,Case 5,2,Feb,0.0056,0.0043,0.0070
+WV,d_pue_midcentury,Case 5,3,Mar,0.0050,0.0036,0.0062
+WV,d_pue_midcentury,Case 5,4,Apr,0.0049,0.0039,0.0061
+WV,d_pue_midcentury,Case 5,5,May,0.0063,0.0054,0.0071
+WV,d_pue_midcentury,Case 5,6,Jun,0.0087,0.0069,0.0099
+WV,d_pue_midcentury,Case 5,7,Jul,0.010,0.0089,0.011
+WV,d_pue_midcentury,Case 5,8,Aug,0.012,0.0094,0.012
+WV,d_pue_midcentury,Case 5,9,Sep,0.010,0.0082,0.012
+WV,d_pue_midcentury,Case 5,10,Oct,0.0081,0.0066,0.0093
+WV,d_pue_midcentury,Case 5,11,Nov,0.0066,0.0052,0.0073
+WV,d_pue_midcentury,Case 5,12,Dec,0.0060,0.0046,0.0071
+WV,hist_tmax_C,all,1,Jan,7.8,7.5,8.2
+WV,hist_tmax_C,all,2,Feb,10.6,10.3,10.9
+WV,hist_tmax_C,all,3,Mar,13.1,13.0,13.3
+WV,hist_tmax_C,all,4,Apr,16.2,16.1,16.4
+WV,hist_tmax_C,all,5,May,20.0,19.8,20.2
+WV,hist_tmax_C,all,6,Jun,23.3,23.1,23.4
+WV,hist_tmax_C,all,7,Jul,27.4,27.1,27.6
+WV,hist_tmax_C,all,8,Aug,27.5,27.3,27.7
+WV,hist_tmax_C,all,9,Sep,24.4,24.1,24.6
+WV,hist_tmax_C,all,10,Oct,18.1,17.9,18.3
+WV,hist_tmax_C,all,11,Nov,11.5,11.3,11.7
+WV,hist_tmax_C,all,12,Dec,8.1,7.9,8.3

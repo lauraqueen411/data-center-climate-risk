@@ -63,13 +63,12 @@ Script: `scripts/fig4_monthly.py`. Output: `fig4_monthly.{png,pdf}`.
 
 **Caption.** Monthly change from 1985–2014 to mid-century (2045–2074) in mean power usage effectiveness (PUE) for facilities in (a) the Columbia Plateau (n = 61) and (b) the Willamette Valley (n = 33), for cooling-system Cases 1 (solid), 2 (dashed) and 5 (dotted). Lines are the mean of the ecoregion's facilities, averaged over 20 climate models (SSP3-7.0); shading is the interquartile range (25th–75th percentile) across models. Both panels share the y-axis.
 
-## Figure 5: warming and PUE response against wet-bulb
+## Figure 5: sensitivity to the supply-air humidity setpoint
 
-Script: `scripts/fig5_mechanism.py`. Output: `fig5_mechanism.{png,pdf}`.
+Script: `scripts/fig5_rh_setpoint.py`. Output: `fig5_rh_setpoint.{png,pdf}`.
 
-1. For each facility and model, compute the annual mean of daily maximum temperature in each year and average over each period. The annual means come from `facility_annual_tmax.csv`, which was produced on the server from the Case 1 daily files.
-2. Compute the mid-century change in annual mean daily maximum temperature and in annual mean Case 1 PUE, per facility and model, then average across models.
-3. Plot each facility against its historical annual afternoon wet-bulb temperature, with marker shape and color giving the ecoregion. Both y-axes start at zero.
-4. Draw no fit lines. The 109 facilities fall in 22 grid cells and five ecoregion clusters, so they are not independent observations. Least-squares fits over the facilities and over the 22 grid cells are written to `fits.csv` for reference only.
+1. Take Case 1 PUE from two otherwise identical ensemble runs that differ only in the supply-air relative humidity upper setpoint: 77.5%, the Table B.1 midpoint used for all other results, and 60%, the lower bound of the published 60–95% range.
+2. For each run, compute the historical value and the mid-century change in annual mean PUE per facility and model, average over each ecoregion's facilities within each model, then take the mean and the interquartile range across the 20 models.
+3. Plot the two setpoints side by side at each ecoregion, ordered by historical annual wet-bulb temperature: points for the ensemble mean, thin vertical bars for the interquartile range. Each panel has its own y-axis, and panel (b) has a zero line.
 
-**Caption.** Mid-century (2045–2074 minus 1985–2014) change in (a) annual mean daily maximum temperature and (b) annual mean power usage effectiveness (PUE) for cooling-system Case 1, against historical annual mean afternoon wet-bulb temperature. Each marker is one facility (mean of 20 climate models, SSP3-7.0); marker shape and color give the ecoregion: Eastern Cascades Slopes and Foothills (ECSF; n = 1), Blue Mountains (BM; n = 13), Columbia Plateau (CP; n = 61), Klamath Mountains (KM; n = 1) and Willamette Valley (WV; n = 33). Facilities in the same LOCA2 grid cell share identical values.
+**Caption.** Case 1 annual mean power usage effectiveness (PUE) with the supply-air relative humidity upper setpoint at 60% (grey) and 77.5% (black), the lower bound and midpoint of the Lei and Masanet (2022) range. (a) Historical (1985–2014) value. (b) Mid-century change (2045–2074 minus 1985–2014). Ecoregions are ordered from left to right by historical annual mean afternoon wet-bulb temperature: Eastern Cascades Slopes and Foothills (ECSF; n = 1), Blue Mountains (BM; n = 13), Columbia Plateau (CP; n = 61), Klamath Mountains (KM; n = 1) and Willamette Valley (WV; n = 33). Points are the ecoregion mean of facilities averaged over 20 climate models (SSP3-7.0); bars are the interquartile range (25th–75th percentile) of the ecoregion mean across models. All other results use the 77.5% setpoint.
