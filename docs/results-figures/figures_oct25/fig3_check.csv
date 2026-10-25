@@ -1,0 +1,13 @@
+check,max_abs_diff
+facility exceedance_days historical vs cache recomputation,0.0
+facility exceedance_days change vs cache recomputation,0.0
+facility pue_case1 historical vs cache recomputation,0.0
+facility pue_case1 change vs cache recomputation,0.0
+ecoregion exceedance_days historical vs draft3/table1.csv hist_exceedance_days (rounded to 1 dp there),0.04666667282581316
+ecoregion exceedance_days change vs draft3/table1.csv d_exceedance (rounded to 1 dp there),0.04999971687793803
+ecoregion pue_case1 historical vs draft3/table1.csv hist_pue (rounded to 3 dp there),0.0002822844597332175
+ecoregion pue_case1 change vs draft3/table1.csv d_pue (rounded to 4 dp there),0.000367652872396651
+facility PUE historical min vs draft3/facility_facts.csv (1.12),0.00044896950265949087
+facility PUE change min vs draft3/facility_facts.csv (0.0089),2.6416903757311636e-05
+facility PUE historical max vs draft3/facility_facts.csv (1.133),0.0004624895023506159
+facility PUE change max vs draft3/facility_facts.csv (0.016),6.596768581469681e-05

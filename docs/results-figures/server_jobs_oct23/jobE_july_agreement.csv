@@ -1,0 +1,13 @@
+quantity,ecoregion,period,n_models_jul_gt_jun,n_models_jul_gt_aug,of
+chiller_pairings,CP,2075–2100,20,3,20
+chiller_pairings,WV,2075–2100,20,0,20
+chiller_pairings,CP,1985–2014,20,18,20
+chiller_pairings,WV,1985–2014,20,3,20
+chiller_pairings,CP,2045–2074,20,9,20
+chiller_pairings,WV,2045–2074,20,0,20
+chiller_hot,CP,2075–2100,20,13,20
+chiller_hot,WV,2075–2100,20,7,20
+chiller_hot,CP,1985–2014,20,18,20
+chiller_hot,WV,1985–2014,20,7,20
+chiller_hot,CP,2045–2074,20,14,20
+chiller_hot,WV,2045–2074,20,7,20

@@ -1,0 +1,10 @@
+threshold_C,quantity,CP_minus_WV,n_models_CP_gt_WV,of,ranking_high_to_low,rank_ECSF,rank_BM,rank_CP,rank_KM,rank_WV
+32.0,historical,28.6,20,20,CP > KM > BM > WV > ECSF,5,3,1,2,4
+32.0,d_midcentury,12.8,20,20,CP > BM > KM > ECSF > WV,4,2,1,3,5
+32.0,d_endcentury,12.9,20,20,CP > ECSF > KM > BM > WV,2,4,1,3,5
+35.0,historical,15.0,20,20,CP > KM > BM > WV > ECSF,5,3,1,2,4
+35.0,d_midcentury,19.5,20,20,CP > KM > BM > ECSF > WV,4,3,1,2,5
+35.0,d_endcentury,26.4,20,20,CP > KM > BM > ECSF > WV,4,3,1,2,5
+40.0,historical,0.9,20,20,CP > KM > WV > BM > ECSF,5,4,1,2,3
+40.0,d_midcentury,9.9,20,20,CP > KM > BM > WV > ECSF,5,3,1,2,4
+40.0,d_endcentury,20.3,20,20,CP > KM > BM > ECSF > WV,4,3,1,2,5

@@ -1,0 +1,16 @@
+method,ecoregion,mean,p25,p75,mean_raw
+(1) pipeline Buck,ECSF,6.8,6.7,6.9,6.7823
+(1) pipeline Buck,BM,8.1,8.0,8.2,8.0829
+(1) pipeline Buck,CP,10.2,10.1,10.3,10.1764
+(1) pipeline Buck,KM,11.2,11.1,11.3,11.1998
+(1) pipeline Buck,WV,11.5,11.4,11.6,11.5382
+(2) Hyland-Wexler,ECSF,6.8,6.7,6.9,6.7822
+(2) Hyland-Wexler,BM,8.1,8.0,8.2,8.0828
+(2) Hyland-Wexler,CP,10.2,10.1,10.3,10.1761
+(2) Hyland-Wexler,KM,11.2,11.1,11.3,11.1996
+(2) Hyland-Wexler,WV,11.5,11.4,11.6,11.5381
+(3) CoolProp,ECSF,6.8,6.7,6.9,6.8058
+(3) CoolProp,BM,8.1,8.0,8.2,8.1208
+(3) CoolProp,CP,10.2,10.2,10.3,10.2302
+(3) CoolProp,KM,11.3,11.2,11.4,11.2555
+(3) CoolProp,WV,11.6,11.5,11.7,11.5791

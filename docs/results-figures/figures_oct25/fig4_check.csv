@@ -1,0 +1,8 @@
+check,n,max_abs_diff,n_match
+absolute mean vs jobB mean_raw,216,2.220446049250313e-16,
+absolute mean vs jobB mean (3 dp),216,0.000499028167896487,216.0
+absolute p25 vs jobB p25 (3 dp),216,0.0004953494463224573,216.0
+absolute p75 vs jobB p75 (3 dp),216,0.0004984345857781403,216.0
+mid-century change mean vs draft3/monthly.csv (draft 3 decimals),72,0.0004959405849556744,72.0
+mid-century change p25 vs draft3/monthly.csv (draft 3 decimals),72,0.00048151669069366673,72.0
+mid-century change p75 vs draft3/monthly.csv (draft 3 decimals),72,0.0004923841431692805,72.0
